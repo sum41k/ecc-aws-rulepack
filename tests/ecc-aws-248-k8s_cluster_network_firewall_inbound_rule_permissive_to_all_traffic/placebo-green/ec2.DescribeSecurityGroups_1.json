@@ -21,7 +21,7 @@
                     }
                 ],
                 "OwnerId": "111111111111",
-                "GroupId": "sg-1234567asdfg",
+                "GroupId": "sg-1234567asdfg2",
                 "IpPermissionsEgress": [
                     {
                         "IpProtocol": "-1",
@@ -66,7 +66,7 @@
                     }
                 ],
                 "OwnerId": "111111111111",
-                "GroupId": "sg-1234567asdfg",
+                "GroupId": "sg-1234567asdfg1",
                 "IpPermissionsEgress": [
                     {
                         "IpProtocol": "-1",

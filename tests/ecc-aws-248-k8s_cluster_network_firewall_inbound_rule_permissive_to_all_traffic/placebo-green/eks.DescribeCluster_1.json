@@ -24,10 +24,10 @@
                     "subnet-06f477f2a842ea355"
                 ],
                 "securityGroupIds": [
-                    "sg-08b25ebfdfad4e390",
-                    "sg-01ae3484b4f9cd6f2"
+                    "sg-1234567asdfg2",
+                    "sg-1234567asdfg1"
                 ],
-                "clusterSecurityGroupId": "sg-0ae28e513909b75cd",
+                "clusterSecurityGroupId": "sg-1234567asdfg2",
                 "vpcId": "vpc-08d8ec720296562e8",
                 "endpointPublicAccess": true,
                 "endpointPrivateAccess": false,

@@ -27,7 +27,7 @@
                 "tags": [
                     {
                         "key": "CustodiaRule",
-                        "Value": "ecc-aws-525-ecs_exec_logging_encryption_enabled"
+                        "value": "ecc-aws-525-ecs_exec_logging_encryption_enabled"
                     },
                     {
                         "key": "ComplianceStatus",

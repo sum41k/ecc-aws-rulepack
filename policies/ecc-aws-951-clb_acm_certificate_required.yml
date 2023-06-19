@@ -23,6 +23,6 @@ policies:
             value: SSL
             op: in
       - type: value
-        key: ListenerDescriptions[].Listener.SSLCertificateId
+        key: length(ListenerDescriptions[].Listener.SSLCertificateId)>`0` && join(' ,', ListenerDescriptions[].Listener.SSLCertificateId)
         op: regex
-        value: '^arn:aws:iam::.*$' 
+        value: '.*(^|, )arn:aws:iam::[^,]*($|, ).*'

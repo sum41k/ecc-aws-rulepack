@@ -14,7 +14,7 @@
                 "tags": [
                     {
                         "key": "CustodianRule",
-                        "Value": "ecc-aws-585-ecs_without_tag_information"
+                        "value": "ecc-aws-585-ecs_without_tag_information"
                     },
                     {
                         "key": "ComplianceStatus",

@@ -14,7 +14,7 @@
                 "tags": [
                     {
                         "key": "CustodianRule",
-                        "Value": "ecc-aws-690-ecs_exec_logging_enabled"
+                        "value": "ecc-aws-690-ecs_exec_logging_enabled"
                     },
                     {
                         "key": "ComplianceStatus",

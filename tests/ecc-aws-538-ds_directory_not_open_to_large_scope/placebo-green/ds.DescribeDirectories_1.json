@@ -41,7 +41,7 @@
                         "subnet-082579082d7b38182",
                         "subnet-02682a905307e70cd"
                     ],
-                    "SecurityGroupId": "sg-03da26794df66ab4d",
+                    "SecurityGroupId": "sg-1234567asdfg",
                     "AvailabilityZones": [
                         "us-east-1c",
                         "us-east-1d"

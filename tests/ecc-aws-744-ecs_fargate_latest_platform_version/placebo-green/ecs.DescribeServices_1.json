@@ -215,7 +215,7 @@
                 "tags": [
                     {
                         "key": "CustodianRule",
-                        "Value": "ecc-aws-744-ecs_fargate_latest_platform_version"
+                        "value": "ecc-aws-744-ecs_fargate_latest_platform_version"
                     },
                     {
                         "key": "ComplianceStatus",

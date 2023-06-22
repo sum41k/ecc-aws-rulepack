@@ -24,9 +24,9 @@
                     "subnet-0b4f0c7654cb8daf6"
                 ],
                 "securityGroupIds": [
-                    "sg-0dea57c02c3960acc"
+                    "sg-1234567asdfg"
                 ],
-                "clusterSecurityGroupId": "sg-09274d8bf608494fc",
+                "clusterSecurityGroupId": "sg-1234567asdfg",
                 "vpcId": "vpc-0a4ba19e2f204826f",
                 "endpointPublicAccess": true,
                 "endpointPrivateAccess": false,

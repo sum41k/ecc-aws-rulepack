@@ -59,7 +59,7 @@
         "tags": [
             {
                 "key": "CustodianRule",
-                "Value": "ecc-aws-955-ecs_containers_nonprivileged"
+                "value": "ecc-aws-955-ecs_containers_nonprivileged"
             },
             {
                 "key": "ComplianceStatus",

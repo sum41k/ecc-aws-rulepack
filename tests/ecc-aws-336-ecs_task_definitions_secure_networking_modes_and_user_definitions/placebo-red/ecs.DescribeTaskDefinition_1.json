@@ -43,7 +43,7 @@
         "tags": [
             {
                 "key": "CustodianRule",
-                "Value": "ecc-aws-336-ecs_task_definitions_secure_networking_modes_and_user_definitions"
+                "value": "ecc-aws-336-ecs_task_definitions_secure_networking_modes_and_user_definitions"
             },
             {
                 "key": "ComplianceStatus",

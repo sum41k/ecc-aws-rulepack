@@ -62,7 +62,7 @@
         "tags": [
             {
                 "key": "CustodianRule",
-                "Value": "ecc-aws-907-ecs_no_environment_secrets"
+                "value": "ecc-aws-907-ecs_no_environment_secrets"
             },
             {
                 "key": "ComplianceStatus",

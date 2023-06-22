@@ -53,7 +53,7 @@
         "tags": [
             {
                 "key": "CustodianRule",
-                "Value": "ecc-aws-746-ecs_task_definition_pid_mode_check"
+                "value": "ecc-aws-746-ecs_task_definition_pid_mode_check"
             },
             {
                 "key": "ComplianceStatus",

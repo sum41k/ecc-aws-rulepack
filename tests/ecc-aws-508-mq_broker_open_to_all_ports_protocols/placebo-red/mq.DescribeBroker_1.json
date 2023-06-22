@@ -69,7 +69,7 @@
         },
         "PubliclyAccessible": true,
         "SecurityGroups": [
-            "sg-00735cb790c715177"
+            "sg-1234567asdfg"
         ],
         "StorageType": "efs",
         "SubnetIds": [

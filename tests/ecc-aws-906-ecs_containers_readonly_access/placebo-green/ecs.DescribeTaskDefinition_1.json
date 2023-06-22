@@ -53,7 +53,7 @@
         "tags": [
             {
                 "key": "CustodianRule",
-                "Value": "ecc-aws-906-ecs_containers_readonly_access"
+                "value": "ecc-aws-906-ecs_containers_readonly_access"
             },
             {
                 "key": "ComplianceStatus",

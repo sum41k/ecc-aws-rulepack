@@ -59,7 +59,7 @@
         "tags": [
             {
                 "key": "CustodianRule",
-                "Value": "ecc-aws-745-ecs_task_definition_memory_hard_limit"
+                "value": "ecc-aws-745-ecs_task_definition_memory_hard_limit"
             },
             {
                 "key": "ComplianceStatus",

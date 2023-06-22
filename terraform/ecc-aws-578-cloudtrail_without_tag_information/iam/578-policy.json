@@ -5,7 +5,7 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "Tag:GetResources",
+                "tag:GetResources",
                 "cloudtrail:DescribeTrails"
             ],
             "Resource": "*"

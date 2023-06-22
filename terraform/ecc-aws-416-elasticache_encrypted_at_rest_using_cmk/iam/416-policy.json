@@ -3,7 +3,7 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": "elasticache:DescribeReplicationGroups"
+            "Action": "elasticache:DescribeReplicationGroups",
             "Resource": "*"
         }
     ]

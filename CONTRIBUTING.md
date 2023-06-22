@@ -51,8 +51,8 @@ More details [here](https://github.com/epam/ecc-aws-rulepack/wiki/Git-workflow-f
 
 Familiarize yourself with:
 
-Cloud Custodian official documentation - https://cloudcustodian.io/  
-[How to use AWS](https://github.com/epam/ecc-aws-rulepack/wiki/How-to-use-AWS)
+- Cloud Custodian official documentation - https://cloudcustodian.io/  
+- [How to use AWS](https://github.com/epam/ecc-aws-rulepack/wiki/How-to-use-AWS)
 
 ### Create new policy
 

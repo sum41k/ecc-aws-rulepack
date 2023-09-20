@@ -1,5 +1,22 @@
 # Changelog
 
+## [v3.0] - 2023-09-20
+### :sparkles: New Policies
+- [`9f014d6`](https://github.com/epam/ecc-aws-rulepack/commit/9f014d6d7b9d632892456a9fb8c2f43734bc8e4c) - added policy ecc-aws-547-rds_instance_generation
+- [`11ef8ce`](https://github.com/epam/ecc-aws-rulepack/commit/11ef8ce13557dccc76af9693326baa893eafa047) - added policy ecc-aws-552-dynamodb_tables_unused
+- [`f0dc7d1`](https://github.com/epam/ecc-aws-rulepack/commit/f0dc7d1321cd1c34586d2552897b0e09e07e4cf9) - added policy ecc-aws-553-unused_clb
+- [`cbe41ca`](https://github.com/epam/ecc-aws-rulepack/commit/cbe41ca2a68cf43525709844f48b2181a9ac589b) - added policy ecc-aws-560-unused_sns_topic
+
+### :wrench: Updates
+- [`1fb3342`](https://github.com/epam/ecc-aws-rulepack/commit/1fb334233bd44fe3defe0833a7a8962da1533338) - added index(comment) to all rules
+- [`0b6311c`](https://github.com/epam/ecc-aws-rulepack/commit/0b6311cfbd74f232d3471af356ec65964b7f9fb4) - updated policy ecc-aws-548-ebs_volumes_are_of_type_gp3_instead_of_gp2
+- [`ea93aa3`](https://github.com/epam/ecc-aws-rulepack/commit/ea93aa3645cf7a02fe5ff102af164e5a54f65021) - updated comment field for all policies
+- [`cd33519`](https://github.com/epam/ecc-aws-rulepack/commit/cd33519fb70c65c1bf042e790410ca494979be93) - updated policy 043
+
+### :adhesive_bandage: Policy Fixes
+- [`595a1b0`](https://github.com/epam/ecc-aws-rulepack/commit/595a1b008035836ab7bf40de5ffc069eb71ca238) - fixed policy 298
+
+
 ## [v2.0] - 2023-08-21
 ### :sparkles: New Policies
 - [`b54d258`](https://github.com/epam/ecc-aws-rulepack/commit/b54d2585b6c5ed5c248e984b1e56d4600ef36804) - added non compatible policies (see the list in the commit message)
@@ -33,3 +50,4 @@
 [v1.0]: https://github.com/epam/ecc-aws-rulepack/compare/Init...v1.0
 
 [v2.0]: https://github.com/epam/ecc-aws-rulepack/compare/v1.0...v2.0
+[v3.0]: https://github.com/epam/ecc-aws-rulepack/compare/v2.0...v3.0

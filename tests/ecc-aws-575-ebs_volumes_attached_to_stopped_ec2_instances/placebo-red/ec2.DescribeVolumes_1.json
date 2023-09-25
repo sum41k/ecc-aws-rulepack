@@ -1,0 +1,48 @@
+{
+    "status_code": 200,
+    "data": {
+        "Volumes": [
+            {
+                "Attachments": [
+                    {
+                        "AttachTime": {
+                            "__class__": "datetime",
+                            "year": 2023,
+                            "month": 9,
+                            "day": 22,
+                            "hour": 18,
+                            "minute": 4,
+                            "second": 41,
+                            "microsecond": 0
+                        },
+                        "Device": "/dev/xvda",
+                        "InstanceId": "i-0cdfc08d96657bff8",
+                        "State": "attached",
+                        "VolumeId": "vol-00c2a20ae4f687d89",
+                        "DeleteOnTermination": true
+                    }
+                ],
+                "AvailabilityZone": "us-east-1c",
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 9,
+                    "day": 22,
+                    "hour": 18,
+                    "minute": 4,
+                    "second": 41,
+                    "microsecond": 625000
+                },
+                "Encrypted": false,
+                "Size": 8,
+                "SnapshotId": "snap-0fcea62414588dc3c",
+                "State": "in-use",
+                "VolumeId": "vol-00c2a20ae4f687d89",
+                "Iops": 100,
+                "VolumeType": "gp2",
+                "MultiAttachEnabled": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

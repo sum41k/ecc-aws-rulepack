@@ -4,7 +4,6 @@ resource "aws_instance" "this" {
   user_data              = file("userdata.sh")
   vpc_security_group_ids = ["${aws_security_group.this.id}"]
   subnet_id              = data.aws_subnets.this.ids[0]
-  key_name = "anna_shcherbak_key"
   tags = {
     Name = "553_instance_green"
   }

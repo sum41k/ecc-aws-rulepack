@@ -1,0 +1,25 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-573-unused_nat_gateway
+    comment: '010002022000'
+    description: |
+      Unused NAT gateways
+    resource: aws.nat-gateway
+    filters:
+      - type: value
+        key: State
+        value: available 
+      - type: metrics
+        name: BytesOutToDestination
+        namespace: AWS/NATGateway
+        statistics: Average
+        missing-value: 0
+        days: 7
+        value: 0
+        op: eq

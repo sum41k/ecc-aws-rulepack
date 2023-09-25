@@ -1,0 +1,50 @@
+{
+    "status_code": 200,
+    "data": {
+        "NatGateways": [
+            {
+                "CreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 9,
+                    "day": 21,
+                    "hour": 17,
+                    "minute": 38,
+                    "second": 13,
+                    "microsecond": 0
+                },
+                "NatGatewayAddresses": [
+                    {
+                        "AllocationId": "eipalloc-03534a9d369e35ea0",
+                        "NetworkInterfaceId": "eni-0be59bc744994b0bf",
+                        "PrivateIp": "10.0.2.114",
+                        "PublicIp": "54.81.143.50",
+                        "AssociationId": "eipassoc-0fa474f1f8b5a5113",
+                        "IsPrimary": true,
+                        "Status": "succeeded"
+                    }
+                ],
+                "NatGatewayId": "nat-0447214d678462482",
+                "State": "available",
+                "SubnetId": "subnet-0d13b72d01c4a19b7",
+                "VpcId": "vpc-0761f8e6771f1e689",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-573-unused_nat_gateway"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "573_nat_gateway_red"
+                    }
+                ],
+                "ConnectivityType": "public"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

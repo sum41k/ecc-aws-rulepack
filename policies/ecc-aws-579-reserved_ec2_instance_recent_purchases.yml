@@ -1,0 +1,22 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-579-reserved_ec2_instance_recent_purchases
+    comment: '010008032000'
+    description: |
+      Amazon EC2 reserved instance recent purchases
+    resource: aws.ec2-reserved
+    filters:
+      - type: value
+        key: State  
+        value: active
+      - type: value
+        key: Start
+        value_type: age
+        op: le
+        value: 7

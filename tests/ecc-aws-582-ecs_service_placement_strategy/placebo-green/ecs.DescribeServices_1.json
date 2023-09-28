@@ -1,0 +1,123 @@
+{
+    "status_code": 200,
+    "data": {
+        "services": [
+            {
+                "serviceArn": "arn:aws:ecs:us-east-1:644160558196:service/582_ecs_cluster_green1/582_ecs_service_green1",
+                "serviceName": "582_ecs_service_green1",
+                "clusterArn": "arn:aws:ecs:us-east-1:644160558196:cluster/582_ecs_cluster_green1",
+                "loadBalancers": [],
+                "serviceRegistries": [],
+                "status": "ACTIVE",
+                "desiredCount": 1,
+                "runningCount": 1,
+                "pendingCount": 0,
+                "launchType": "EC2",
+                "taskDefinition": "arn:aws:ecs:us-east-1:644160558196:task-definition/582_ecs_task_definition_green1:5",
+                "deploymentConfiguration": {
+                    "deploymentCircuitBreaker": {
+                        "enable": true,
+                        "rollback": true
+                    },
+                    "maximumPercent": 200,
+                    "minimumHealthyPercent": 100
+                },
+                "deployments": [
+                    {
+                        "id": "ecs-svc/0523781564419601837",
+                        "status": "PRIMARY",
+                        "taskDefinition": "arn:aws:ecs:us-east-1:644160558196:task-definition/582_ecs_task_definition_green1:5",
+                        "desiredCount": 1,
+                        "pendingCount": 0,
+                        "runningCount": 1,
+                        "failedTasks": 0,
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2023,
+                            "month": 9,
+                            "day": 28,
+                            "hour": 13,
+                            "minute": 6,
+                            "second": 28,
+                            "microsecond": 482000
+                        },
+                        "updatedAt": {
+                            "__class__": "datetime",
+                            "year": 2023,
+                            "month": 9,
+                            "day": 28,
+                            "hour": 13,
+                            "minute": 6,
+                            "second": 28,
+                            "microsecond": 482000
+                        },
+                        "launchType": "EC2",
+                        "rolloutState": "IN_PROGRESS",
+                        "rolloutStateReason": "ECS deployment ecs-svc/0523781564419601837 in progress."
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "f0198b4c-7715-4fd1-a52e-270e1aed7b55",
+                        "createdAt": {
+                            "__class__": "datetime",
+                            "year": 2023,
+                            "month": 9,
+                            "day": 28,
+                            "hour": 13,
+                            "minute": 6,
+                            "second": 29,
+                            "microsecond": 937000
+                        },
+                        "message": "(service 582_ecs_service_green1) has started 1 tasks: (task 94fa91d1a2c94fc08b0ce645730cefd1)."
+                    }
+                ],
+                "createdAt": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 9,
+                    "day": 28,
+                    "hour": 13,
+                    "minute": 6,
+                    "second": 28,
+                    "microsecond": 482000
+                },
+                "placementConstraints": [],
+                "placementStrategy": [
+                    {
+                        "type": "binpack",
+                        "field": "CPU"
+                    },
+                    {
+                        "type": "binpack",
+                        "field": "MEMORY"
+                    },
+                    {
+                        "type": "spread",
+                        "field": "instanceId"
+                    }
+                ],
+                "schedulingStrategy": "REPLICA",
+                "deploymentController": {
+                    "type": "ECS"
+                },
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "value": "ecc-aws-582-ecs_service_placement_strategy"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Green1"
+                    }
+                ],
+                "createdBy": "arn:aws:iam::644160558196:user/Anna_Shcherbak",
+                "enableECSManagedTags": false,
+                "propagateTags": "NONE",
+                "enableExecuteCommand": false
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}

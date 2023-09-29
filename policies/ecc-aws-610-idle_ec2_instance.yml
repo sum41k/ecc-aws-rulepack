@@ -1,0 +1,46 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-610-idle_ec2_instance
+    comment: '010003032000'
+    description: |
+      Idle AWS EC2 instances
+    resource: aws.ec2
+    filters:
+      - type: value
+        key: State.Name
+        value: running 
+      - type: value
+        key: LaunchTime
+        value_type: age
+        op: ge
+        value: 21
+      - type: metrics
+        name: CPUUtilization
+        namespace: "AWS/EC2"
+        statistics: Maximum
+        days: 21
+        period: 3600
+        value: 2
+        op: lt
+      - type: metrics
+        name: NetworkIn
+        namespace: "AWS/EC2"
+        statistics: Maximum
+        days: 21
+        period: 3600
+        value: 50000
+        op: lt
+      - type: metrics
+        name: NetworkOut
+        namespace: "AWS/EC2"
+        statistics: Maximum
+        days: 21
+        period: 3600
+        value: 50000
+        op: lt

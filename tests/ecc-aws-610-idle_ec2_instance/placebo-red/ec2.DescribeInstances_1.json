@@ -1,0 +1,186 @@
+{
+    "status_code": 200,
+    "data": {
+        "Reservations": [
+            {
+                "Groups": [],
+                "Instances": [
+                    {
+                        "AmiLaunchIndex": 0,
+                        "ImageId": "ami-057275275225c",
+                        "InstanceId": "i-00cbb7527527523619",
+                        "InstanceType": "t3a.small",
+                        "KeyName": "610-instance-red",
+                        "LaunchTime": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 12,
+                            "day": 15,
+                            "hour": 22,
+                            "minute": 41,
+                            "second": 28,
+                            "microsecond": 0
+                        },
+                        "Monitoring": {
+                            "State": "disabled"
+                        },
+                        "Placement": {
+                            "AvailabilityZone": "us-east-1f",
+                            "GroupName": "",
+                            "Tenancy": "default"
+                        },
+                        "PrivateDnsName": "ip-172-31-20-253.ec2.internal",
+                        "PrivateIpAddress": "172.31.20.253",
+                        "ProductCodes": [],
+                        "PublicDnsName": "ec2-40-231-18-242.compute-1.amazonaws.com",
+                        "PublicIpAddress": "40.231.18.242",
+                        "State": {
+                            "Code": 16,
+                            "Name": "running"
+                        },
+                        "StateTransitionReason": "",
+                        "SubnetId": "subnet-2427527552a",
+                        "VpcId": "vpc-ad2752750",
+                        "Architecture": "x86_64",
+                        "BlockDeviceMappings": [
+                            {
+                                "DeviceName": "/dev/sda1",
+                                "Ebs": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2022,
+                                        "month": 12,
+                                        "day": 15,
+                                        "hour": 22,
+                                        "minute": 41,
+                                        "second": 29,
+                                        "microsecond": 0
+                                    },
+                                    "DeleteOnTermination": true,
+                                    "Status": "attached",
+                                    "VolumeId": "vol-0772272272414d746c"
+                                }
+                            }
+                        ],
+                        "ClientToken": "b9fec127-af48-4245-993e-88722752752010",
+                        "EbsOptimized": true,
+                        "EnaSupport": true,
+                        "Hypervisor": "xen",
+                        "NetworkInterfaces": [
+                            {
+                                "Association": {
+                                    "IpOwnerId": "amazon",
+                                    "PublicDnsName": "ec2-40-231-18-24.compute-1.amazonaws.com",
+                                    "PublicIp": "40.231.18.24"
+                                },
+                                "Attachment": {
+                                    "AttachTime": {
+                                        "__class__": "datetime",
+                                        "year": 2022,
+                                        "month": 12,
+                                        "day": 15,
+                                        "hour": 22,
+                                        "minute": 41,
+                                        "second": 28,
+                                        "microsecond": 0
+                                    },
+                                    "AttachmentId": "eni-attach-0927527510491aa",
+                                    "DeleteOnTermination": true,
+                                    "DeviceIndex": 0,
+                                    "Status": "attached",
+                                    "NetworkCardIndex": 0
+                                },
+                                "Description": "",
+                                "Groups": [
+                                    {
+                                        "GroupName": "610-sg-red",
+                                        "GroupId": "sg-0d57272724755b8f1d"
+                                    }
+                                ],
+                                "Ipv6Addresses": [],
+                                "MacAddress": "16:80:60:09:d1:41",
+                                "NetworkInterfaceId": "eni-097827824ef0ae3",
+                                "OwnerId": "644160558196",
+                                "PrivateDnsName": "ip-172-40-77-123.ec2.internal",
+                                "PrivateIpAddress": "172.40.77.123",
+                                "PrivateIpAddresses": [
+                                    {
+                                        "Association": {
+                                            "IpOwnerId": "amazon",
+                                            "PublicDnsName": "ec2-40-231-18-242.compute-1.amazonaws.com",
+                                            "PublicIp": "40.231.18.242"
+                                        },
+                                        "Primary": true,
+                                        "PrivateDnsName": "ip-72-52-87-96.ec2.internal",
+                                        "PrivateIpAddress": "72.52.87.96"
+                                    }
+                                ],
+                                "SourceDestCheck": true,
+                                "Status": "in-use",
+                                "SubnetId": "subnet-227252a",
+                                "VpcId": "vpc-a57275d0",
+                                "InterfaceType": "interface"
+                            }
+                        ],
+                        "RootDeviceName": "/dev/sda1",
+                        "RootDeviceType": "ebs",
+                        "SecurityGroups": [
+                            {
+                                "GroupName": "610-sg-red",
+                                "GroupId": "sg-0d5e48215727f1d"
+                            }
+                        ],
+                        "SourceDestCheck": true,
+                        "Tags": [],
+                        "VirtualizationType": "hvm",
+                        "CpuOptions": {
+                            "CoreCount": 1,
+                            "ThreadsPerCore": 2
+                        },
+                        "CapacityReservationSpecification": {
+                            "CapacityReservationPreference": "open"
+                        },
+                        "HibernationOptions": {
+                            "Configured": false
+                        },
+                        "MetadataOptions": {
+                            "State": "applied",
+                            "HttpTokens": "optional",
+                            "HttpPutResponseHopLimit": 1,
+                            "HttpEndpoint": "enabled",
+                            "HttpProtocolIpv6": "disabled",
+                            "InstanceMetadataTags": "disabled"
+                        },
+                        "EnclaveOptions": {
+                            "Enabled": false
+                        },
+                        "PlatformDetails": "Linux/UNIX",
+                        "UsageOperation": "RunInstances",
+                        "UsageOperationUpdateTime": {
+                            "__class__": "datetime",
+                            "year": 2022,
+                            "month": 12,
+                            "day": 15,
+                            "hour": 22,
+                            "minute": 41,
+                            "second": 28,
+                            "microsecond": 0
+                        },
+                        "PrivateDnsNameOptions": {
+                            "HostnameType": "ip-name",
+                            "EnableResourceNameDnsARecord": true,
+                            "EnableResourceNameDnsAAAARecord": false
+                        },
+                        "MaintenanceOptions": {
+                            "AutoRecovery": "default"
+                        },
+                        "CurrentInstanceBootMode": "legacy-bios"
+                    }
+                ],
+                "OwnerId": "644160558196",
+                "ReservationId": "r-05b2045727529a434d"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-582-ecs_service_placement_strategy
+    comment: '010006082000'
+    description: |
+      Amazon ECS Service placement strategy is 'random'
+    resource: aws.ecs-service
+    filters:
+      - type: value
+        key: placementStrategy[].type
+        op: contains
+        value: random

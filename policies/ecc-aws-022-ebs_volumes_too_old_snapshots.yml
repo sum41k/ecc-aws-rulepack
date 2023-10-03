@@ -9,7 +9,7 @@ policies:
   - name: ecc-aws-022-ebs_volumes_too_old_snapshots
     comment: '010002042000'
     description: |
-      EBS Snapshots older than 30 days
+      Unused EBS snapshots older than 30 days
     resource: aws.ebs-snapshot
     filters:
       - type: age

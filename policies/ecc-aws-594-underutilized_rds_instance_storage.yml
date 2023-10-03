@@ -1,0 +1,27 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-594-underutilized_rds_instance_storage
+    comment: '010003062000'
+    description: |
+      Underutilized AWS RDS instance storage
+    resource: aws.rds
+    filters:
+      - type: value
+        key: InstanceCreateTime
+        op: ge
+        value_type: age
+        value: 14 
+      - type: metrics
+        days: 14
+        statistics: Maximum
+        name: FreeStorageSpace
+        percent-attr: AllocatedStorage
+        attr-multiplier: 1073741824
+        value: 85
+        op: ge

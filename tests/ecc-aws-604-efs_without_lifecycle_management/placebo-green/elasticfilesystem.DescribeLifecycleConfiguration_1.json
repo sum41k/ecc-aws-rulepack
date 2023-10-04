@@ -1,0 +1,14 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "LifecyclePolicies": [
+            {
+                "TransitionToPrimaryStorageClass": "AFTER_1_ACCESS"
+            },
+            {
+                "TransitionToIA": "AFTER_30_DAYS"
+            }
+        ]
+    }
+}

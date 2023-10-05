@@ -1,0 +1,27 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-614-idle_rds_instance
+    comment: '010003062000'
+    description: |
+      AWS RDS instance without connections for at least 7 consecutive days
+    resource: aws.rds
+    filters:
+      - type: value
+        key: InstanceCreateTime
+        op: ge
+        value_type: age
+        value: 7
+      - type: metrics
+        name: DatabaseConnections
+        namespace: "AWS/RDS"
+        statistics: Maximum
+        days: 7
+        value: 0
+        op: eq
+

@@ -101,6 +101,7 @@
                 "elasticbeanstalk:DescribeEnvironments",
                 "elasticbeanstalk:ListTagsForResource",
                 "elasticfilesystem:DescribeFileSystems",
+                "elasticfilesystem:DescribeLifecycleConfiguration",
                 "elasticloadbalancing:DescribeListeners",
                 "elasticloadbalancing:DescribeLoadBalancerAttributes",
                 "elasticloadbalancing:DescribeLoadBalancerPolicies",

@@ -1,0 +1,55 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "FileSystems": [
+            {
+                "OwnerId": "644160558196",
+                "CreationToken": "604_efs_green",
+                "FileSystemId": "fs-0676e59fcaf730961",
+                "FileSystemArn": "arn:aws:elasticfilesystem:us-east-1:644160558196:file-system/fs-0676e59fcaf730961",
+                "CreationTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 10,
+                    "day": 4,
+                    "hour": 13,
+                    "minute": 17,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "LifeCycleState": "available",
+                "Name": "604_instance_green",
+                "NumberOfMountTargets": 0,
+                "SizeInBytes": {
+                    "Value": 6144,
+                    "ValueInIA": 0,
+                    "ValueInStandard": 6144
+                },
+                "PerformanceMode": "generalPurpose",
+                "Encrypted": false,
+                "ThroughputMode": "bursting",
+                "AvailabilityZoneName": "us-east-1a",
+                "AvailabilityZoneId": "use1-az6",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-604-efs_without_lifecycle_management"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "604_instance_green"
+                    },
+                    {
+                        "Key": "aws:elasticfilesystem:default-backup",
+                        "Value": "enabled"
+                    }
+                ]
+            }
+        ]
+    }
+}

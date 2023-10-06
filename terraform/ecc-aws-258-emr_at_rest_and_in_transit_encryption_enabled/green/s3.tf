@@ -24,7 +24,7 @@ resource "aws_s3_bucket_ownership_controls" "this" {
 }
 
 resource "aws_s3_object" "this" {
-  bucket = "258-bucket-green"
+  bucket = aws_s3_bucket.this.id
   key    = "my-certs.zip"
   source = "${path.module}/my-certs.zip"
   etag   = filemd5("${path.module}/my-certs.zip")

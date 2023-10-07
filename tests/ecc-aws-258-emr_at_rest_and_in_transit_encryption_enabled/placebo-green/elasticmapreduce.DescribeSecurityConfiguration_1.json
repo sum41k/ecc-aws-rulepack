@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Name": "258_security_configuration_green",
+        "SecurityConfiguration": "{\r\n  \"EncryptionConfiguration\": {\r\n    \"EnableAtRestEncryption\": true,\r\n    \"AtRestEncryptionConfiguration\": {\r\n      \"S3EncryptionConfiguration\": {\r\n        \"EncryptionMode\": \"SSE-KMS\",\r\n        \"AwsKmsKey\": \"arn:aws:kms:us-east-1:644160558196:key/4e06f50d-b7b9-494d-88e6-96ea5e1773e4\"\r\n      },\r\n      \"LocalDiskEncryptionConfiguration\": {\r\n        \"EncryptionKeyProviderType\": \"AwsKms\",\r\n        \"AwsKmsKey\": \"arn:aws:kms:us-east-1:644160558196:key/4e06f50d-b7b9-494d-88e6-96ea5e1773e4\"\r\n      }\r\n    },\r\n    \"EnableInTransitEncryption\": true,\r\n    \"InTransitEncryptionConfiguration\" : {\r\n      \"TLSCertificateConfiguration\" : {\r\n        \"CertificateProviderType\" : \"PEM\",\r\n        \"S3Object\" : \"s3://258-bucket-6643189-green/my-certs.zip\"\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+        "CreationDateTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 10,
+            "day": 7,
+            "hour": 11,
+            "minute": 37,
+            "second": 39,
+            "microsecond": 556000
+        },
+        "ResponseMetadata": {}
+    }
+}

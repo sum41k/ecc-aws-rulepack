@@ -16,17 +16,16 @@ policies:
         op: in
         value: [RUNNING, WAITING]
       - not:
-          - and:
-              - type: security-configuration
-                key: EncryptionConfiguration.EnableAtRestEncryption
-                value: true
-              - type: security-configuration
-                key: EncryptionConfiguration.EnableInTransitEncryption
-                op: eq
-                value: true
-              - type: security-configuration
-                key: EncryptionConfiguration.AtRestEncryptionConfiguration.LocalDiskEncryptionConfiguration.EncryptionKeyProviderType
-                value: present
+        - and:
+          - type: security-configuration
+            key: EncryptionConfiguration.EnableInTransitEncryption
+            value: true
+          - type: security-configuration
+            key: EncryptionConfiguration.AtRestEncryptionConfiguration.S3EncryptionConfiguration.EncryptionMode
+            value: present
+          - type: security-configuration
+            key: EncryptionConfiguration.AtRestEncryptionConfiguration.LocalDiskEncryptionConfiguration.EncryptionKeyProviderType
+            value: present
 
 
 

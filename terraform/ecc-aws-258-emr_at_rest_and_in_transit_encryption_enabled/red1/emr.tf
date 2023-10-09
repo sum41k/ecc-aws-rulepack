@@ -49,8 +49,6 @@ resource "aws_emr_security_configuration" "this" {
 EOF
 }
 
-
-
 resource "aws_kms_key" "this" {
   description             = "258_kms_key_red1"
   deletion_window_in_days = 7

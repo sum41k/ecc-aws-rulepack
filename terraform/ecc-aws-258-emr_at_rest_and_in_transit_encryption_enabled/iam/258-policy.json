@@ -6,7 +6,8 @@
             "Action": [
                 "elasticmapreduce:DescribeSecurityConfiguration",
                 "elasticmapreduce:ListClusters",
-                "elasticmapreduce:DescribeCluster"
+                "elasticmapreduce:DescribeCluster",
+                "elasticmapreduce:ListSecurityConfigurations"
             ],
             "Resource": "*"
         }

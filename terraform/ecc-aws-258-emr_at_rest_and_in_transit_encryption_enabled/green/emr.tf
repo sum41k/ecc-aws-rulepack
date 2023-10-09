@@ -51,7 +51,7 @@ resource "aws_emr_security_configuration" "this" {
     "InTransitEncryptionConfiguration" : {
       "TLSCertificateConfiguration" : {
         "CertificateProviderType" : "PEM",
-        "S3Object" : "s3://258-bucket-green/my-certs.zip"
+        "S3Object" : "s3://${aws_s3_bucket.this.id}/my-certs.zip"
       }
     }
   }

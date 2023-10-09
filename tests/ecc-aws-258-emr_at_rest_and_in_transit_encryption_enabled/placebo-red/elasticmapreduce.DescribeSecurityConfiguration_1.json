@@ -1,0 +1,18 @@
+{
+    "status_code": 200,
+    "data": {
+        "Name": "258_security_configuration_red1",
+        "SecurityConfiguration": "{\r\n  \"EncryptionConfiguration\": {\r\n    \"EnableAtRestEncryption\": true,\r\n    \"AtRestEncryptionConfiguration\": {\r\n      \"LocalDiskEncryptionConfiguration\": {\r\n        \"EncryptionKeyProviderType\": \"AwsKms\",\r\n        \"AwsKmsKey\": \"arn:aws:kms:us-east-1:644160558196:key/7a4b4fa2-8f02-434f-b323-53d2b9b29f7f\"\r\n      }\r\n    },\r\n    \"EnableInTransitEncryption\": false\r\n  }\r\n}\r\n",
+        "CreationDateTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 10,
+            "day": 7,
+            "hour": 11,
+            "minute": 58,
+            "second": 39,
+            "microsecond": 139000
+        },
+        "ResponseMetadata": {}
+    }
+}

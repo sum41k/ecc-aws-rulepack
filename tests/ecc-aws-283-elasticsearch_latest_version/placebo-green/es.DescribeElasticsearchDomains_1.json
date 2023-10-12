@@ -12,7 +12,7 @@
                 "Endpoint": "search-elasticsearch-283-green-sqrl5fumngl6zniiccpgcym4py.us-east-1.es.amazonaws.com",
                 "Processing": false,
                 "UpgradeProcessing": false,
-                "ElasticsearchVersion": "OpenSearch_2.3",
+                "ElasticsearchVersion": "OpenSearch_2.9",
                 "ElasticsearchClusterConfig": {
                     "InstanceType": "m4.large.elasticsearch",
                     "InstanceCount": 1,

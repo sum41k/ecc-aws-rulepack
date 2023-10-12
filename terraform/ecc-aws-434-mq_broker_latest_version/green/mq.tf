@@ -13,7 +13,7 @@ resource "aws_mq_broker" "this" {
 resource "aws_mq_broker" "this1" {
   broker_name = "mq-broker-rabbit-434-green"
   engine_type                = "RabbitMQ"
-  engine_version             = "3.10.10"
+  engine_version             = "3.11.20"
   host_instance_type         = "mq.t3.micro"
   publicly_accessible        = true
   user {

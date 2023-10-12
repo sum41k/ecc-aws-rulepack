@@ -19,4 +19,4 @@ policies:
           - type: value
             key: Runtime
             op: regex
-            value: '(nodejs18.x|python3.9|java11|dotnetcore3.1|dotnet6|go1.x|ruby2.7)'
+            value: '(nodejs18.x|python3.11|java17|dotnetcore3.1|dotnet6|go1.x|ruby3.2)'

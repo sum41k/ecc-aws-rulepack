@@ -29,6 +29,7 @@
                 "cloudtrail:GetTrailStatus",
                 "cloudwatch:GetMetricStatistics",
                 "cloudwatch:DescribeAlarms",
+                "cloudwatch:DescribeAlarmsForMetric",
                 "codebuild:BatchGetProjects",
                 "codebuild:ListProjects",
                 "codedeploy:GetDeploymentGroup",

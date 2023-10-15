@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "067_Unauthorized_API_Calls_green",
+                "filterPattern": "{(($.errorCode=\"*UnauthorizedOperation\") || ($.errorCode=\"AccessDenied*\")) && (($.sourceIPAddress!=\"delivery.logs.amazonaws.com\") && ($.eventName!=\"HeadBucket\"))}",
+                "metricTransformations": [
+                    {
+                        "metricName": "067_Unauthorized_API_Calls_green",
+                        "metricNamespace": "API_Calls",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1697365001970,
+                "logGroupName": "067_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

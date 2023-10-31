@@ -1,9 +1,4 @@
 resource "aws_mwaa_environment" "this" {
-  airflow_configuration_options = {
-    "core.default_task_retries" = 16
-    "core.parallelism"          = 1
-  }
-
   dag_s3_path        = "dags/"
   execution_role_arn = aws_iam_role.this.arn
   name               = "mwaa_448_red"
@@ -15,6 +10,14 @@ resource "aws_mwaa_environment" "this" {
   }
 
   source_bucket_arn = aws_s3_bucket.this.arn
+  depends_on = [
+    aws_route_table_association.route_table_nat_gateway1,
+    aws_route_table_association.route_table_nat_gateway2
+  ]
+}
+
+resource "aws_cloudwatch_log_group" "this" {
+  name = "airflow-mwaa_448_red-Task"
 }
 
 resource "aws_s3_bucket" "this" {

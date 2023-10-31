@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 data "aws_iam_policy_document" "this" {
   statement {
     sid    = "304_event_bus_policy_red"
@@ -6,7 +8,7 @@ data "aws_iam_policy_document" "this" {
       "events:DescribeEventBus",
     ]
     resources = [
-      "arn:aws:events:us-east-1:111111111111:event-bus/304_event_bus_red"
+      "arn:aws:events:us-east-1:${data.aws_caller_identity.current.account_id}:event-bus/304_event_bus_red"
     ]
 
     principals {

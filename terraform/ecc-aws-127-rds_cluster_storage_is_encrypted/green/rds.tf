@@ -1,7 +1,7 @@
 resource "aws_rds_cluster" "this" {
   cluster_identifier  = "rds-127-green"
   engine              = "aurora-mysql"
-  engine_version      = "5.7.mysql_aurora.2.03.2"
+  engine_version      = "5.7.mysql_aurora.2.11.4"
   database_name       = "rdsgreen"
   master_username     = "root"
   master_password     = random_password.this.result
@@ -13,7 +13,7 @@ resource "aws_rds_cluster" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }
 

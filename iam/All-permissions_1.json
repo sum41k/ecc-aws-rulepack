@@ -221,11 +221,7 @@
                 "waf-regional:GetWebACL",
                 "waf:GetWebACL",
                 "waf:ListWebACLs",
-                "workspaces:DescribeWorkspaceDirectories",
-                "workspaces:DescribeWorkspaceImages",
-                "workspaces:DescribeWorkspaces",
-                "workspaces:DescribeWorkspacesConnectionStatus",
-                "xray:GetEncryptionConfig"
+                "workspaces:DescribeWorkspaceDirectories"
             ],
             "Resource": "*"
         }

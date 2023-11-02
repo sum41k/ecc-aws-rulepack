@@ -9,7 +9,7 @@ policies:
     comment: '010019022010'
     description: |
       API Gateway HTTP and WEBSOCKET API does not have logging enabled
-    resource: aws.api-stage
+    resource: aws.apigwv2-stage
     filters:
       - or:
           - type: value

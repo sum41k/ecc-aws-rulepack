@@ -1,0 +1,41 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Items": [
+            {
+                "AutoDeploy": false,
+                "CreatedDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 1,
+                    "hour": 14,
+                    "minute": 9,
+                    "second": 6,
+                    "microsecond": 0
+                },
+                "DefaultRouteSettings": {
+                    "DetailedMetricsEnabled": false
+                },
+                "LastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 1,
+                    "hour": 14,
+                    "minute": 9,
+                    "second": 6,
+                    "microsecond": 0
+                },
+                "RouteSettings": {},
+                "StageName": "376-stage-red",
+                "StageVariables": {},
+                "Tags": {
+                    "CustodiaRule": "ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_set_correctly",
+                    "ComplianceStatus": "Red"
+                }
+            }
+        ]
+    }
+}

@@ -11,6 +11,7 @@ policies:
       ECS container insight is disabled
     resource: aws.ecs
     filters:
-      - type: include-settings-ecs
-        key: containerInsights
+      - type: value
+        key: settings[?(name=='containerInsights')].value
+        op: contains
         value: disabled

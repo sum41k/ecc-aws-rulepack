@@ -1,0 +1,45 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Items": [
+            {
+                "AccessLogSettings": {
+                    "DestinationArn": "arn:aws:logs:us-east-1:111111111111:log-group:376_log_group_green1",
+                    "Format": "$context.identity.sourceIp,$context.identity.caller,$context.identity.user,$context.requestTime,$context.httpMethod,$context.resourcePath,$context.protocol,$context.status,$context.responseLength,$context.requestId"
+                },
+                "AutoDeploy": false,
+                "CreatedDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 1,
+                    "hour": 14,
+                    "minute": 9,
+                    "second": 14,
+                    "microsecond": 0
+                },
+                "DefaultRouteSettings": {
+                    "DetailedMetricsEnabled": false
+                },
+                "LastUpdatedDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 1,
+                    "hour": 14,
+                    "minute": 9,
+                    "second": 15,
+                    "microsecond": 0
+                },
+                "RouteSettings": {},
+                "StageName": "376-stage-green",
+                "StageVariables": {},
+                "Tags": {
+                    "CustodiaRule": "ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_set_correctly",
+                    "ComplianceStatus": "Green"
+                }
+            }
+        ]
+    }
+}

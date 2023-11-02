@@ -1,0 +1,31 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "Items": [
+            {
+                "ApiEndpoint": "https://q29awq9h6l.execute-api.us-east-1.amazonaws.com",
+                "ApiId": "q29awq9h6l",
+                "ApiKeySelectionExpression": "$request.header.x-api-key",
+                "CreatedDate": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 1,
+                    "hour": 14,
+                    "minute": 9,
+                    "second": 13,
+                    "microsecond": 0
+                },
+                "DisableExecuteApiEndpoint": false,
+                "Name": "376_http-api_green",
+                "ProtocolType": "HTTP",
+                "RouteSelectionExpression": "$request.method $request.path",
+                "Tags": {
+                    "CustodiaRule": "ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_set_correctly",
+                    "ComplianceStatus": "Green"
+                }
+            }
+        ]
+    }
+}

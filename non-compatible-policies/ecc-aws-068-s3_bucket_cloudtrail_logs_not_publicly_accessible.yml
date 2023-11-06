@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-068-s3_bucket_cloudtrail_logs_not_publicly_accessible
-    comment: '010040010300'
+    comment: '010040012500'
     description: |
       S3 bucket used to store CloudTrail logs is publicly accessible
     resource: aws.cloudtrail

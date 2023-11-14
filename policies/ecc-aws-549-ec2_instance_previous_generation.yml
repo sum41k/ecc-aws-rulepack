@@ -1,0 +1,18 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-549-ec2_instance_previous_generation
+    comment: '010006032000'
+    description: |
+      EC2 instance is not using last generation classes
+    resource: ec2
+    filters:
+      - type: value
+        key: InstanceType
+        op: regex
+        value: '(m1|m2|m3|t1|c1|c3|i2|cr1|r3|hs1|g2|a1).[^\s]+'

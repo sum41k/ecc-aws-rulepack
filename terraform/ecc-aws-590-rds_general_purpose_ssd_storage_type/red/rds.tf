@@ -1,0 +1,20 @@
+resource "random_password" "this" {
+  length           = 12
+  special          = true
+  numeric          = true
+  override_special = "!#$%*()-_=+[]{}:?"
+}
+
+resource "aws_db_instance" "this" {
+  allocated_storage     = 100
+  engine                = "mysql"
+  engine_version        = "5.7"
+  instance_class        = "db.t2.micro"
+  db_name               = "database590red"
+  username              = "root"
+  password              = random_password.this.result
+  parameter_group_name  = "default.mysql5.7"
+  skip_final_snapshot   = true
+  storage_type          = "io1"
+  iops                  = "1000"
+}

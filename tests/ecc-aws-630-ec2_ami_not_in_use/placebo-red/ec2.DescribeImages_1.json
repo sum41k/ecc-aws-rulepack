@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "data": {
+        "Images": [
+            {
+                "Architecture": "x86_64",
+                "CreationDate": "2023-11-28T09:40:01.000Z",
+                "ImageId": "ami-04e00817508275ea5",
+                "ImageLocation": "644160558196/630_ami_red",
+                "ImageType": "machine",
+                "Public": false,
+                "OwnerId": "644160558196",
+                "PlatformDetails": "Linux/UNIX",
+                "UsageOperation": "RunInstances",
+                "State": "available",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/xvda",
+                        "Ebs": {
+                            "DeleteOnTermination": true,
+                            "SnapshotId": "snap-0ed317e361eea4e6c",
+                            "VolumeSize": 8,
+                            "VolumeType": "gp2",
+                            "Encrypted": false
+                        }
+                    }
+                ],
+                "EnaSupport": true,
+                "Hypervisor": "xen",
+                "Name": "630_ami_red",
+                "RootDeviceName": "/dev/xvda",
+                "RootDeviceType": "ebs",
+                "SriovNetSupport": "simple",
+                "Tags": [
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Red"
+                    },
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-630-ec2_ami_not_in_use"
+                    }
+                ],
+                "VirtualizationType": "hvm"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

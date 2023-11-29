@@ -1,0 +1,94 @@
+{
+    "status_code": 200,
+    "data": {
+        "Clusters": [
+            {
+                "ClusterIdentifier": "c7n-598-redshift-green",
+                "NodeType": "dc2.large",
+                "ClusterStatus": "available",
+                "ClusterAvailabilityStatus": "Available",
+                "MasterUsername": "root",
+                "DBName": "redshift598green",
+                "Endpoint": {
+                    "Address": "c7n-598-redshift-green.cqwaglj6btcm.us-east-1.redshift.amazonaws.com",
+                    "Port": 5439
+                },
+                "ClusterCreateTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 27,
+                    "hour": 11,
+                    "minute": 13,
+                    "second": 44,
+                    "microsecond": 730000
+                },
+                "AutomatedSnapshotRetentionPeriod": 1,
+                "ManualSnapshotRetentionPeriod": -1,
+                "ClusterSecurityGroups": [],
+                "VpcSecurityGroups": [
+                    {
+                        "VpcSecurityGroupId": "sg-a5befc90",
+                        "Status": "active"
+                    }
+                ],
+                "ClusterParameterGroups": [
+                    {
+                        "ParameterGroupName": "default.redshift-1.0",
+                        "ParameterApplyStatus": "in-sync"
+                    }
+                ],
+                "ClusterSubnetGroupName": "default",
+                "VpcId": "vpc-ad9744d0",
+                "AvailabilityZone": "us-east-1c",
+                "PreferredMaintenanceWindow": "thu:08:30-thu:09:00",
+                "PendingModifiedValues": {},
+                "ClusterVersion": "1.0",
+                "AllowVersionUpgrade": true,
+                "NumberOfNodes": 1,
+                "PubliclyAccessible": true,
+                "Encrypted": false,
+                "ClusterPublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSLfRy3lKvZpJhD6J2xB9gciMn4wKQAkJ+J22XOtAWcJJIIC75C8K8O4Xk0Ie2+S4yTq/H1blPL35qrFoV0Z1K7zKjMHU9D9sm52iyOF0H6gUnI7zyYBsHd3r8Xeb5NDEKNuphXR7RJSkDZCJUMyAKT9FqE/sli8Cqsp8wnaO6IEXs4y5rjsNgG1eZCtoK4DOiEzxiEwCHAcKAjui2TG+fKLyzPEXvuEJBQCKl4arcUGmqA9b2VJODHR3ud8WBbE+VISgQu62x0m25mf3ApmIBfROyyeNi9ALSbRdNIwX9A3mGziuDseRoKNYLMX0Js8RcppJYwOmPj+MFiDhJwFXT Amazon-Redshift\n",
+                "ClusterNodes": [
+                    {
+                        "NodeRole": "SHARED",
+                        "PrivateIPAddress": "172.31.83.168",
+                        "PublicIPAddress": "3.221.51.54"
+                    }
+                ],
+                "ClusterRevisionNumber": "60353",
+                "Tags": [
+                    {
+                        "Key": "CustodianRule",
+                        "Value": "ecc-aws-598-redshift_instance_generation"
+                    },
+                    {
+                        "Key": "ComplianceStatus",
+                        "Value": "Green"
+                    }
+                ],
+                "EnhancedVpcRouting": false,
+                "IamRoles": [],
+                "MaintenanceTrackName": "current",
+                "DeferredMaintenanceWindows": [],
+                "NextMaintenanceWindowStartTime": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 11,
+                    "day": 30,
+                    "hour": 8,
+                    "minute": 30,
+                    "second": 0,
+                    "microsecond": 0
+                },
+                "AvailabilityZoneRelocationStatus": "disabled",
+                "ClusterNamespaceArn": "arn:aws:redshift:us-east-1:644160558196:namespace:4aaaf1ee-3d46-4eab-8be2-1071795eb7e1",
+                "AquaConfiguration": {
+                    "AquaStatus": "disabled",
+                    "AquaConfigurationStatus": "auto"
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

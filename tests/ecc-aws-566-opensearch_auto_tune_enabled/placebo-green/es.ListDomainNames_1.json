@@ -1,0 +1,12 @@
+{
+    "status_code": 200,
+    "data": {
+        "ResponseMetadata": {},
+        "DomainNames": [
+            {
+                "DomainName": "domain-566-green",
+                "EngineType": "OpenSearch"
+            }
+        ]
+    }
+}

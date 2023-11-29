@@ -1,0 +1,16 @@
+{
+    "status_code": 200,
+    "data": {
+        "logGroups": [
+            {
+                "logGroupName": "cloudwatch_602_log_group_green",
+                "creationTime": 1700479492806,
+                "retentionInDays": 180,
+                "metricFilterCount": 0,
+                "arn": "arn:aws:logs:us-east-1:644160558196:log-group:cloudwatch_602_log_group_green:*",
+                "storedBytes": 0
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

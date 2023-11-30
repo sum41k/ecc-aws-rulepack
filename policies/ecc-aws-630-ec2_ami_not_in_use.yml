@@ -1,0 +1,16 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-630-ec2_ami_not_in_use
+    comment: '010002032000'
+    description: |
+      AMI not in use
+    resource: aws.ami
+    filters:
+      - type: unused
+        value: true

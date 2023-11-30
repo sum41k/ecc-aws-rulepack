@@ -1,0 +1,19 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-569-asg_propagate_tags_to_ec2_instances
+    comment: '010010032000'
+    description: |
+      Auto Scaling groups not propagating tags to ec2 instance
+    resource: asg
+    filters:
+      - not:
+        - type: value
+          key: Tags[*].PropagateAtLaunch
+          op: contains
+          value: true

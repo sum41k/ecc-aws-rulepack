@@ -6,7 +6,7 @@
 
 policies:
   - name: ecc-aws-144-bucket_object-level_logging_for_read_enabled
-    comment: '010019010300'
+    comment: '010019012500'
     description: |
       Object-level logging for read events is disabled for S3 bucket
     resource: aws.account

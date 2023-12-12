@@ -12,7 +12,7 @@ provider "aws" {
   region  = var.default-region
   default_tags {
     tags = {
-      CustodiaRule     = "ecc-aws-549-api_gateway_http_api_and_websocket_api_logs_set_correctly"
+      CustodiaRule     = "ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_set_correctly"
       ComplianceStatus = "Green"
     }
   }

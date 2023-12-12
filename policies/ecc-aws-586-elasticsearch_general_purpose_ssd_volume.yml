@@ -4,13 +4,15 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+
 policies:
-  - name: ecc-aws-493-ecs_container_insights_enabled
-    comment: '010019082000'
+  - name: ecc-aws-586-elasticsearch_general_purpose_ssd_volume
+    comment: '010007052000'
     description: |
-      ECS container insight is disabled
-    resource: aws.ecs
+      ElasticSearch instance not uses general purpose ssd
+    resource: elasticsearch
     filters:
-      - type: include-settings-ecs
-        key: containerInsights
-        value: disabled
+      - not:
+        - type: value
+          key: EBSOptions.VolumeType
+          value: gp3

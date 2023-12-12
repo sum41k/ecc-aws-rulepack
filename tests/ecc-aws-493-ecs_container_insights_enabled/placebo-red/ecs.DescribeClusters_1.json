@@ -1,0 +1,37 @@
+{
+    "status_code": 200,
+    "data": {
+        "clusters": [
+            {
+                "clusterArn": "arn:aws:ecs:us-east-1:111111111111:cluster/493_ecs_cluster_red",
+                "clusterName": "493_ecs_cluster_red",
+                "status": "ACTIVE",
+                "registeredContainerInstancesCount": 0,
+                "runningTasksCount": 0,
+                "pendingTasksCount": 0,
+                "activeServicesCount": 0,
+                "statistics": [],
+                "tags": [
+                    {
+                        "key": "CustodianRule",
+                        "value": "ecc-aws-493-ecs_container_insights_enabled"
+                    },
+                    {
+                        "key": "ComplianceStatus",
+                        "value": "Red"
+                    }
+                ],
+                "settings": [
+                    {
+                        "name": "containerInsights",
+                        "value": "disabled"
+                    }
+                ],
+                "capacityProviders": [],
+                "defaultCapacityProviderStrategy": []
+            }
+        ],
+        "failures": [],
+        "ResponseMetadata": {}
+    }
+}

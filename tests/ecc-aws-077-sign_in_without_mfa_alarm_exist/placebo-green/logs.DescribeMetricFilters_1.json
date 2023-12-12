@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "077_Console_Sign_in_without_MFA_green",
+                "filterPattern": "{($.eventName = \"ConsoleLogin\") && ($.additionalEventData.MFAUsed != \"Yes\") && ($.userIdentity.type = \"IAMUser\") && ($.responseElements.ConsoleLogin = \"Success\")}",
+                "metricTransformations": [
+                    {
+                        "metricName": "077_Console_Sign_in_without_MFA_green",
+                        "metricNamespace": "Console_Sign_in_without_MFA",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702386538672,
+                "logGroupName": "077_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

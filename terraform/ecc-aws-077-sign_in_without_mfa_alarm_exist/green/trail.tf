@@ -11,6 +11,12 @@ resource "aws_cloudtrail" "this" {
     aws_s3_bucket.this,
     aws_s3_bucket_policy.this
   ]
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Management"]
+    }
+  }
 }
 
 resource "aws_s3_bucket" "this" {

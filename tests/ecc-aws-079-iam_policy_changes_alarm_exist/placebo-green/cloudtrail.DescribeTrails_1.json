@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "c7n-079-cloudtrail-green",
+                "S3BucketName": "c7n-079-bucket-green",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": true,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/c7n-079-cloudtrail-green",
+                "LogFileValidationEnabled": false,
+                "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:644160558196:log-group:079_log_group_green:*",
+                "CloudWatchLogsRoleArn": "arn:aws:iam::644160558196:role/079_role_green",
+                "HasCustomEventSelectors": false,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

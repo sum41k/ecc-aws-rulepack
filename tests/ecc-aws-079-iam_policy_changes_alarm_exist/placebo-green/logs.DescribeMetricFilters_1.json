@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "079_Iam_Policy_Changes_green",
+                "filterPattern": "{($.eventName=DeleteGroupPolicy) || ($.eventName=DeleteRolePolicy) || ($.eventName=DeleteUserPolicy) || ($.eventName=PutGroupPolicy) || ($.eventName=PutRolePolicy) || ($.eventName=PutUserPolicy) || ($.eventName=CreatePolicy) || ($.eventName=DeletePolicy) || ($.eventName=CreatePolicyVersion) || ($.eventName=DeletePolicyVersion) || ($.eventName=AttachRolePolicy) || ($.eventName=DetachRolePolicy) || ($.eventName=AttachUserPolicy) || ($.eventName=DetachUserPolicy) || ($.eventName=AttachGroupPolicy) || ($.eventName=DetachGroupPolicy)}",
+                "metricTransformations": [
+                    {
+                        "metricName": "079_Iam_Policy_Changes_green",
+                        "metricNamespace": "IAM_Policy_Changes",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702540781872,
+                "logGroupName": "079_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

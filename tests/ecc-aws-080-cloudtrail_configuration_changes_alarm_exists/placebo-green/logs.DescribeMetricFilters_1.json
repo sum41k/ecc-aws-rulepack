@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "080_CloudTrail_Configuration_Changes",
+                "filterPattern": "{ ($.eventName = CreateTrail) || ($.eventName = UpdateTrail) || ($.eventName = DeleteTrail) || ($.eventName = StartLogging) || ($.eventName = StopLogging) }",
+                "metricTransformations": [
+                    {
+                        "metricName": "080_CloudTrail_Configuration_Changes",
+                        "metricNamespace": "CloudTrail_Configuration_Changes",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702544241305,
+                "logGroupName": "080_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

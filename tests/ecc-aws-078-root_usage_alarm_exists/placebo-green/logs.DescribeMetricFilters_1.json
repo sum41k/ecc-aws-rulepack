@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "078_Root_Account_Usage_green",
+                "filterPattern": "{ $.userIdentity.type = \"Root\" && $.userIdentity.invokedBy NOT EXISTS && $.eventType != \"AwsServiceEvent\" }",
+                "metricTransformations": [
+                    {
+                        "metricName": "078_Root_Account_Usage_green",
+                        "metricNamespace": "Root_Account_Usage",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702401083538,
+                "logGroupName": "078_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

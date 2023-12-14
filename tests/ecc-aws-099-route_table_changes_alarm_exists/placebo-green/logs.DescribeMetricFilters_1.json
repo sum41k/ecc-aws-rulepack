@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "099_Route_Table_Changes_green",
+                "filterPattern": "{($.eventName = CreateRoute) || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable)}",
+                "metricTransformations": [
+                    {
+                        "metricName": "099_Route_Table_Changes_green",
+                        "metricNamespace": "Route_Table_Changes",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702547522642,
+                "logGroupName": "099_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

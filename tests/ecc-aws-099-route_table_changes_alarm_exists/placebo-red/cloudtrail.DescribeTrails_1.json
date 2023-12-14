@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "trailList": [
+            {
+                "Name": "cloudtrail-099-red",
+                "S3BucketName": "099-bucket-636900-red",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": false,
+                "HomeRegion": "us-east-1",
+                "TrailARN": "arn:aws:cloudtrail:us-east-1:644160558196:trail/cloudtrail-099-red",
+                "LogFileValidationEnabled": false,
+                "CloudWatchLogsLogGroupArn": "arn:aws:logs:us-east-1:644160558196:log-group:099_log_group_red:*",
+                "CloudWatchLogsRoleArn": "arn:aws:iam::644160558196:role/099_role_red",
+                "HasCustomEventSelectors": false,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

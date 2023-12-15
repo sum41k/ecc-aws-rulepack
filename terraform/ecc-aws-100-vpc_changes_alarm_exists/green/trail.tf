@@ -7,6 +7,12 @@ resource "aws_cloudtrail" "this" {
   cloud_watch_logs_group_arn    = "${aws_cloudwatch_log_group.this.arn}:*"
   include_global_service_events = true
   is_multi_region_trail         = true
+  advanced_event_selector {
+    field_selector {
+      field  = "eventCategory"
+      equals = ["Management"]
+    }
+  }
   depends_on = [
     aws_s3_bucket.this,
     aws_s3_bucket_policy.this,

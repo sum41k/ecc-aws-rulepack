@@ -1,0 +1,59 @@
+{
+    "status_code": 200,
+    "data": {
+        "MetricAlarms": [
+            {
+                "AlarmName": "081_Management_Console_Auth_Failure_green",
+                "AlarmArn": "arn:aws:cloudwatch:us-east-1:644160558196:alarm:081_Management_Console_Auth_Failure_green",
+                "AlarmConfigurationUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 16,
+                    "hour": 11,
+                    "minute": 4,
+                    "second": 57,
+                    "microsecond": 426000
+                },
+                "ActionsEnabled": true,
+                "OKActions": [],
+                "AlarmActions": [
+                    "arn:aws:sns:us-east-1:644160558196:081-sns-green"
+                ],
+                "InsufficientDataActions": [],
+                "StateValue": "INSUFFICIENT_DATA",
+                "StateReason": "Unchecked: Initial alarm creation",
+                "StateUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 16,
+                    "hour": 11,
+                    "minute": 4,
+                    "second": 57,
+                    "microsecond": 426000
+                },
+                "MetricName": "081_Management_Console_Auth_Failure_green",
+                "Namespace": "Management_Console_Auth_Failure",
+                "Statistic": "Sum",
+                "Dimensions": [],
+                "Period": 300,
+                "EvaluationPeriods": 1,
+                "Threshold": 1.0,
+                "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+                "TreatMissingData": "missing",
+                "StateTransitionedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 16,
+                    "hour": 11,
+                    "minute": 4,
+                    "second": 57,
+                    "microsecond": 426000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

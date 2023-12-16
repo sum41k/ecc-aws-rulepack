@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "094_S3_Bucket_Policy_Changes_green",
+                "filterPattern": "{($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication))}",
+                "metricTransformations": [
+                    {
+                        "metricName": "094_S3_Bucket_Policy_Changes_green",
+                        "metricNamespace": "S3_Bucket_Policy_Changes",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702745477883,
+                "logGroupName": "094_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

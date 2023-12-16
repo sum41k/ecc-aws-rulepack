@@ -1,0 +1,34 @@
+{
+    "status_code": 200,
+    "data": {
+        "IsLogging": true,
+        "LatestDeliveryTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 12,
+            "day": 16,
+            "hour": 18,
+            "minute": 52,
+            "second": 44,
+            "microsecond": 177000
+        },
+        "StartLoggingTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 12,
+            "day": 16,
+            "hour": 18,
+            "minute": 51,
+            "second": 25,
+            "microsecond": 702000
+        },
+        "LatestCloudWatchLogsDeliveryError": "CannotAssumeRole",
+        "LatestDeliveryAttemptTime": "2023-12-16T16:52:44Z",
+        "LatestNotificationAttemptTime": "",
+        "LatestNotificationAttemptSucceeded": "",
+        "LatestDeliveryAttemptSucceeded": "2023-12-16T16:52:44Z",
+        "TimeLoggingStarted": "2023-12-16T16:51:25Z",
+        "TimeLoggingStopped": "",
+        "ResponseMetadata": {}
+    }
+}

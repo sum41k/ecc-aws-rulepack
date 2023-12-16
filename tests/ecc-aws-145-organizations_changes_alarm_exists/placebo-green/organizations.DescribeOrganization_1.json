@@ -1,0 +1,20 @@
+{
+    "status_code": 200,
+    "data": {
+        "Organization": {
+            "Id": "o-xxxxxx",
+            "Arn": "arn:aws:organizations::644160558196:organization/o-xxxxxx",
+            "FeatureSet": "ALL",
+            "MasterAccountArn": "arn:aws:organizations::644160558196:account/o-xxxxxx/644160558196",
+            "MasterAccountId": "644160558196",
+            "MasterAccountEmail": "test@email.com",
+            "AvailablePolicyTypes": [
+                {
+                    "Type": "SERVICE_CONTROL_POLICY",
+                    "Status": "ENABLED"
+                }
+            ]
+        },
+        "ResponseMetadata": {}
+    }
+}

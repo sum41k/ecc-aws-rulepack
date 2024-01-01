@@ -4,15 +4,14 @@
         {
             "Effect": "Allow",
             "Action": [ 
+                "iam:ListAccountAliases",
                 "cloudtrail:DescribeTrails",
                 "cloudtrail:GetTrailStatus",
                 "cloudtrail:GetEventSelectors",
-                "sns:GetTopicAttributes",
-                "sns:ListTopics",
                 "cloudwatch:DescribeAlarms",
                 "logs:DescribeMetricFilters",
-                "logs:DescribeLogGroups",
-                "iam:ListAccountAliases"
+                "cloudwatch:DescribeAlarmsForMetric",
+                "sns:GetTopicAttributes"
             ],
             "Resource": "*"
         }

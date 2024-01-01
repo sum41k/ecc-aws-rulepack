@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "096_Security_Group_Changes_green",
+                "filterPattern": "{($.eventName = AuthorizeSecurityGroupIngress) || ($.eventName = AuthorizeSecurityGroupEgress) || ($.eventName = RevokeSecurityGroupIngress) || ($.eventName = RevokeSecurityGroupEgress) || ($.eventName = CreateSecurityGroup) || ($.eventName = DeleteSecurityGroup)}",
+                "metricTransformations": [
+                    {
+                        "metricName": "096_Security_Group_Changes_green",
+                        "metricNamespace": "Security_Group_Changes",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1704135360917,
+                "logGroupName": "096_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

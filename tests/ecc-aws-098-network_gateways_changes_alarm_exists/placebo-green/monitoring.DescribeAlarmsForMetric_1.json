@@ -1,0 +1,59 @@
+{
+    "status_code": 200,
+    "data": {
+        "MetricAlarms": [
+            {
+                "AlarmName": "098_Network_Gateways_Changes_green",
+                "AlarmArn": "arn:aws:cloudwatch:us-east-1:644160558196:alarm:098_Network_Gateways_Changes_green",
+                "AlarmConfigurationUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 14,
+                    "hour": 13,
+                    "minute": 48,
+                    "second": 20,
+                    "microsecond": 399000
+                },
+                "ActionsEnabled": true,
+                "OKActions": [],
+                "AlarmActions": [
+                    "arn:aws:sns:us-east-1:644160558196:098_sns_green"
+                ],
+                "InsufficientDataActions": [],
+                "StateValue": "INSUFFICIENT_DATA",
+                "StateReason": "Unchecked: Initial alarm creation",
+                "StateUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 14,
+                    "hour": 13,
+                    "minute": 48,
+                    "second": 20,
+                    "microsecond": 399000
+                },
+                "MetricName": "098_Network_Gateways_Changes_green",
+                "Namespace": "Network_Gateways_Changes",
+                "Statistic": "Sum",
+                "Dimensions": [],
+                "Period": 300,
+                "EvaluationPeriods": 1,
+                "Threshold": 1.0,
+                "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+                "TreatMissingData": "missing",
+                "StateTransitionedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 14,
+                    "hour": 13,
+                    "minute": 48,
+                    "second": 20,
+                    "microsecond": 399000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

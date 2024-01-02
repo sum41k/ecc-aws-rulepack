@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "098_Network_Gateways_Changes_green",
+                "filterPattern": "{ ($.eventName = CreateCustomerGateway) || ($.eventName = DeleteCustomerGateway) || ($.eventName = AttachInternetGateway) || ($.eventName = CreateInternetGateway) || ($.eventName = DeleteInternetGateway) || ($.eventName = DetachInternetGateway) }",
+                "metricTransformations": [
+                    {
+                        "metricName": "098_Network_Gateways_Changes_green",
+                        "metricNamespace": "Network_Gateways_Changes",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702561698922,
+                "logGroupName": "098_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

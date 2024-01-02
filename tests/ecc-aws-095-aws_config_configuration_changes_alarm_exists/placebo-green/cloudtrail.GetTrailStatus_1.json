@@ -1,0 +1,33 @@
+{
+    "status_code": 200,
+    "data": {
+        "IsLogging": true,
+        "LatestDeliveryTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 12,
+            "day": 16,
+            "hour": 19,
+            "minute": 29,
+            "second": 47,
+            "microsecond": 548000
+        },
+        "StartLoggingTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 12,
+            "day": 16,
+            "hour": 19,
+            "minute": 28,
+            "second": 29,
+            "microsecond": 21000
+        },
+        "LatestDeliveryAttemptTime": "2023-12-16T17:29:47Z",
+        "LatestNotificationAttemptTime": "",
+        "LatestNotificationAttemptSucceeded": "",
+        "LatestDeliveryAttemptSucceeded": "2023-12-16T17:29:47Z",
+        "TimeLoggingStarted": "2023-12-16T17:28:29Z",
+        "TimeLoggingStopped": "",
+        "ResponseMetadata": {}
+    }
+}

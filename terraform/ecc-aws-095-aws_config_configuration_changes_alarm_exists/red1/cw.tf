@@ -9,7 +9,7 @@ resource "aws_cloudwatch_log_stream" "this" {
 
 resource "aws_cloudwatch_log_metric_filter" "this" {
   name           = "095_AWS_Config_Configuration_Changes_red"
-  pattern        = "{ ($.eventSource = config.amazonaws.com) && (($.eventName=StopConfigurationRecorder)||($.eventName=DeleteDeliveryChannel)||($.eventName=PutDeliveryChannel)||($.eventName=PutConfigurationRecorder)) }"
+  pattern        = "{ ($.eventSource = config.amazonaws.com) && (($.eventName=StopConfigurationRecorder)||($.eventName=DeleteDeliveryChannel)||($.eventName=PutDeliveryChannel)) }"
   log_group_name = aws_cloudwatch_log_group.this.name
 
   metric_transformation {

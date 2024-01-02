@@ -1,0 +1,50 @@
+{
+    "status_code": 200,
+    "data": {
+        "CompositeAlarms": [],
+        "MetricAlarms": [
+            {
+                "AlarmName": "145_organizations_changes_green",
+                "AlarmArn": "arn:aws:cloudwatch:us-east-1:644160668196:alarm:145_organizations_changes_green",
+                "AlarmConfigurationUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 31,
+                    "hour": 11,
+                    "minute": 57,
+                    "second": 32,
+                    "microsecond": 218000
+                },
+                "ActionsEnabled": true,
+                "OKActions": [],
+                "AlarmActions": [
+                    "arn:aws:sns:us-east-1:644160668196:145-sns-green"
+                ],
+                "InsufficientDataActions": [],
+                "StateValue": "INSUFFICIENT_DATA",
+                "StateReason": "Unchecked: Initial alarm creation",
+                "StateUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 1,
+                    "day": 31,
+                    "hour": 11,
+                    "minute": 57,
+                    "second": 32,
+                    "microsecond": 218000
+                },
+                "MetricName": "145_organizations_changes_green",
+                "Namespace": "organizations_changes",
+                "Statistic": "Sum",
+                "Dimensions": [],
+                "Period": 300,
+                "EvaluationPeriods": 1,
+                "Threshold": 1.0,
+                "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+                "TreatMissingData": "missing"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "status_code": 200,
+    "data": {
+        "TrailARN": "arn:aws:cloudtrail:us-east-1:644160668196:trail/145-cloudtrail-red",
+        "EventSelectors": [
+            {
+                "ReadWriteType": "All",
+                "IncludeManagementEvents": true,
+                "DataResources": [],
+                "ExcludeManagementEventSources": []
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

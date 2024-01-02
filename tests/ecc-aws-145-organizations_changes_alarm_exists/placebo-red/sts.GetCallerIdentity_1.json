@@ -1,0 +1,9 @@
+{
+    "status_code": 200,
+    "data": {
+        "UserId": "AIDAXPHGII4AFP26BDOIX",
+        "Account": "644160668196",
+        "Arn": "arn:aws:iam::644160668196:user/test",
+        "ResponseMetadata": {}
+    }
+}

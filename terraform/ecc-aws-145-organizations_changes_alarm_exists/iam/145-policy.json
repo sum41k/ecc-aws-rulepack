@@ -3,17 +3,16 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [
-                "sns:GetTopicAttributes",
-                "logs:DescribeLogGroups",
-                "organizations:DescribeOrganization",
-                "cloudtrail:GetTrailStatus",
-                "cloudwatch:DescribeAlarms",
-                "sns:ListTopics",
+            "Action": [ 
                 "iam:ListAccountAliases",
-                "logs:DescribeMetricFilters",
+                "cloudtrail:DescribeTrails",
+                "cloudtrail:GetTrailStatus",
                 "cloudtrail:GetEventSelectors",
-                "cloudtrail:DescribeTrails"
+                "cloudwatch:DescribeAlarms",
+                "logs:DescribeMetricFilters",
+                "cloudwatch:DescribeAlarmsForMetric",
+                "organizations:DescribeOrganization",
+                "sns:GetTopicAttributes"
             ],
             "Resource": "*"
         }

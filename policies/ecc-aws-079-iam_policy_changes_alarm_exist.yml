@@ -1,0 +1,21 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+policies:
+  - name: ecc-aws-079-iam_policy_changes_alarm_exist
+    comment: '010016012500'
+    description: |
+      Log metric filter and alarm do not exist for IAM policy changes
+    resource: aws.account
+    filters:
+      - type: check-cloudtrail
+        multi-region: true
+        running: true
+        include-management-events: true
+        log-metric-filter-pattern:
+          type: value
+          op: regex
+          value: '{ ?\(? ?\$\.eventName ?= ?\"?DeleteGroupPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DeleteRolePolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DeleteUserPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?PutGroupPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?PutRolePolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?PutUserPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?CreatePolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DeletePolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?CreatePolicyVersion\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DeletePolicyVersion\"?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?AttachRolePolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DetachRolePolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?AttachUserPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DetachUserPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?AttachGroupPolicy\"? ?\)? ?\|\| ?\(? ?\$\.eventName ?= ?\"?DetachGroupPolicy\"? ?\)? ?}'

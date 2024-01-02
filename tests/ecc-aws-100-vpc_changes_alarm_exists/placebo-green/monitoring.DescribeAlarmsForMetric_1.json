@@ -1,0 +1,59 @@
+{
+    "status_code": 200,
+    "data": {
+        "MetricAlarms": [
+            {
+                "AlarmName": "100_VPC_Changes_green",
+                "AlarmArn": "arn:aws:cloudwatch:us-east-1:644160558196:alarm:100_VPC_Changes_green",
+                "AlarmConfigurationUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 14,
+                    "hour": 15,
+                    "minute": 36,
+                    "second": 15,
+                    "microsecond": 77000
+                },
+                "ActionsEnabled": true,
+                "OKActions": [],
+                "AlarmActions": [
+                    "arn:aws:sns:us-east-1:644160558196:100-sns-green"
+                ],
+                "InsufficientDataActions": [],
+                "StateValue": "INSUFFICIENT_DATA",
+                "StateReason": "Unchecked: Initial alarm creation",
+                "StateUpdatedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 14,
+                    "hour": 15,
+                    "minute": 36,
+                    "second": 15,
+                    "microsecond": 77000
+                },
+                "MetricName": "100_VPC_Changes_green",
+                "Namespace": "VPC_Changes",
+                "Statistic": "Sum",
+                "Dimensions": [],
+                "Period": 300,
+                "EvaluationPeriods": 1,
+                "Threshold": 1.0,
+                "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+                "TreatMissingData": "missing",
+                "StateTransitionedTimestamp": {
+                    "__class__": "datetime",
+                    "year": 2023,
+                    "month": 12,
+                    "day": 14,
+                    "hour": 15,
+                    "minute": 36,
+                    "second": 15,
+                    "microsecond": 77000
+                }
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

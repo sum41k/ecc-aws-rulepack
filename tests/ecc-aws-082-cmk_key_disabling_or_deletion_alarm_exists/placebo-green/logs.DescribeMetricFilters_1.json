@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "082_CMK_key_Disabling_or_Deletion",
+                "filterPattern": "{ ($.eventSource = kms.amazonaws.com) && (($.eventName=DisableKey)||($.eventName=ScheduleKeyDeletion)) }",
+                "metricTransformations": [
+                    {
+                        "metricName": "082_CMK_key_Disabling_or_Deletion",
+                        "metricNamespace": "CMK_key_Disabling_or_Deletion",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702743724445,
+                "logGroupName": "082_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "status_code": 200,
+    "data": {
+        "metricFilters": [
+            {
+                "filterName": "081_Iam_Policy_Changes_green",
+                "filterPattern": "{($.eventName = ConsoleLogin) && ($.errorMessage = \"Failed authentication\")}",
+                "metricTransformations": [
+                    {
+                        "metricName": "081_Management_Console_Auth_Failure_green",
+                        "metricNamespace": "Management_Console_Auth_Failure",
+                        "metricValue": "1",
+                        "unit": "None"
+                    }
+                ],
+                "creationTime": 1702724695922,
+                "logGroupName": "081_log_group_green"
+            }
+        ],
+        "ResponseMetadata": {}
+    }
+}

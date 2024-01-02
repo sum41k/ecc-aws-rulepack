@@ -1,0 +1,63 @@
+{
+    "status_code": 200,
+    "data": {
+        "IsLogging": true,
+        "LatestDeliveryTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 10,
+            "day": 15,
+            "hour": 22,
+            "minute": 47,
+            "second": 59,
+            "microsecond": 478000
+        },
+        "LatestNotificationTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 10,
+            "day": 15,
+            "hour": 22,
+            "minute": 47,
+            "second": 59,
+            "microsecond": 472000
+        },
+        "StartLoggingTime": {
+            "__class__": "datetime",
+            "year": 2022,
+            "month": 11,
+            "day": 22,
+            "hour": 14,
+            "minute": 8,
+            "second": 48,
+            "microsecond": 545000
+        },
+        "LatestCloudWatchLogsDeliveryTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 10,
+            "day": 15,
+            "hour": 22,
+            "minute": 49,
+            "second": 29,
+            "microsecond": 568000
+        },
+        "LatestDigestDeliveryTime": {
+            "__class__": "datetime",
+            "year": 2023,
+            "month": 10,
+            "day": 15,
+            "hour": 22,
+            "minute": 21,
+            "second": 35,
+            "microsecond": 928000
+        },
+        "LatestDeliveryAttemptTime": "2023-10-15T19:47:59Z",
+        "LatestNotificationAttemptTime": "2023-10-15T19:47:59Z",
+        "LatestNotificationAttemptSucceeded": "2023-10-15T19:47:59Z",
+        "LatestDeliveryAttemptSucceeded": "2023-10-15T19:47:59Z",
+        "TimeLoggingStarted": "2022-11-22T12:08:48Z",
+        "TimeLoggingStopped": "",
+        "ResponseMetadata": {}
+    }
+}

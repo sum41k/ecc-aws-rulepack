@@ -13,7 +13,8 @@
 				"batch:DescribeComputeEnvironments",
 				"kafka:ListClustersV2",
 				"cloudformation:ListStacks",
-				"iam:ListVirtualMFADevices"
+				"iam:ListVirtualMFADevices",
+                "cloudwatch:DescribeAlarmsForMetric"
 			],
 			"Resource": "*"
 		}

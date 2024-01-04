@@ -1,0 +1,22 @@
+# Copyright (c) 2023 EPAM Systems, Inc.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+policies:
+  - name: ecc-aws-596-reserved_redshift_node_payment_pending
+    comment: '010008062000'
+    description: |
+      Amazon Redshift reserved instance payment pending
+    resource: aws.redshift-reserved
+    filters:
+      - type: value
+        key: State
+        value: payment-pending
+      - type: value
+        key: StartTime
+        value_type: age
+        op: ge
+        value: 0.5

@@ -1,7 +1,7 @@
 resource "aws_elasticache_cluster" "redis" {
   cluster_id               = "c7n-272-elasticache-redis-cluster-red"
   engine                   = "redis"
-  engine_version           = "5.0.6"
+  engine_version           = "7.0"
   node_type                = "cache.t2.micro"
   num_cache_nodes          = 1
   port                     = 6379

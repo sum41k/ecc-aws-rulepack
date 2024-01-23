@@ -15,4 +15,4 @@ policies:
       - not:
           - type: value
             key: ElasticsearchVersion
-            value: 'OpenSearch_2.9'
+            value: 'OpenSearch_2.11'

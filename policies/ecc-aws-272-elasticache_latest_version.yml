@@ -20,7 +20,8 @@ policies:
                     value: memcached
                   - type: value
                     key: EngineVersion
-                    value: "1.6.17"
+                    op: regex
+                    value: '1.6.*'
               - and:
                   - type: value
                     key: Engine
@@ -28,4 +29,4 @@ policies:
                   - type: value
                     key: EngineVersion
                     op: regex
-                    value: '7.0.*'
+                    value: '7.1.*'

@@ -47,5 +47,5 @@ resource "aws_lambda_function" "this" {
   function_name = "461_lambda_green"
   role          = aws_iam_role.this.arn
   handler       = "func.py"
-  runtime       = "python3.11"
+  runtime       = "python3.12"
 }

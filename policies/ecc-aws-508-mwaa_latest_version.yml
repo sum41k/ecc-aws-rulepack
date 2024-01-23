@@ -15,4 +15,4 @@ policies:
       - not:
           - type: value
             key: AirflowVersion
-            value: '2.6.3'
+            value: '2.7.2'

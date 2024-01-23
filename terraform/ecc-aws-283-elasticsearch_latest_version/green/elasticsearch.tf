@@ -1,6 +1,6 @@
 resource "aws_elasticsearch_domain" "this" {
   domain_name           = "elasticsearch-283-green"
-  elasticsearch_version = "OpenSearch_2.9"
+  elasticsearch_version = "OpenSearch_2.11"
 
   ebs_options {
     ebs_enabled = true

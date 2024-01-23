@@ -77,7 +77,7 @@
                 "PreferredMaintenanceWindow": "sat:13:07-sat:13:37",
                 "PendingModifiedValues": {},
                 "MultiAZ": false,
-                "EngineVersion": "3.5.1",
+                "EngineVersion": "3.5.2",
                 "AutoMinorVersionUpgrade": false,
                 "KmsKeyId": "arn:aws:kms:us-east-1:111111111111:key/e56f2d19-2ba5-4c25-829a-44ad8f133131",
                 "ReplicationInstanceArn": "arn:aws:dms:us-east-1:111111111111:rep:UM3S7JB7K5M7NGHUWRC3JIOIG3IS2Y2O2R24FYA",

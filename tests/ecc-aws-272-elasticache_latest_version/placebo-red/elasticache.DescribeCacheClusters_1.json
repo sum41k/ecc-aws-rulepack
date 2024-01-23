@@ -47,7 +47,7 @@
                 "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
                 "CacheNodeType": "cache.t2.micro",
                 "Engine": "redis",
-                "EngineVersion": "5.0.6",
+                "EngineVersion": "7.0.7",
                 "CacheClusterStatus": "available",
                 "NumCacheNodes": 1,
                 "PreferredAvailabilityZone": "us-east-1f",

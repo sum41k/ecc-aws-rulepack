@@ -3,7 +3,7 @@ resource "aws_dms_replication_instance" "this" {
   apply_immediately          = true
   availability_zone          = "us-east-1c"
   publicly_accessible        = false
-  engine_version             = "3.4.2"
+  engine_version             = "3.5.1"
   replication_instance_class = "dms.t2.micro"
   replication_instance_id    = "dms-replication-instance-310-red"
 

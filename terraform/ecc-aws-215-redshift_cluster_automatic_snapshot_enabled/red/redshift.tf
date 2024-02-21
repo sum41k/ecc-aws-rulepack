@@ -10,6 +10,5 @@ resource "aws_redshift_cluster" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = false
-  override_special = "_%@"
   min_numeric      = 1
 }

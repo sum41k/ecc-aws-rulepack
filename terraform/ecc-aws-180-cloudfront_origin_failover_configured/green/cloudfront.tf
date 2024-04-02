@@ -111,6 +111,7 @@ resource "aws_cloudfront_distribution" "this" {
     cloudfront_default_certificate = true
   }
   depends_on = [
-    aws_s3_bucket_acl.this
+    aws_s3_bucket_acl.failover,
+    aws_s3_bucket_acl.primary
   ]
 }

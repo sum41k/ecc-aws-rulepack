@@ -1,7 +1,7 @@
 resource "aws_rds_cluster" "this" {
   cluster_identifier  = "cluster-213-green"
   engine              = "aurora-mysql"
-  engine_version      = "5.7.mysql_aurora.2.03.2"
+  engine_version      = "5.7.mysql_aurora.2.12.1"
   database_name       = "cluster213green"
   master_username     = "root"
   master_password     = random_password.this.result
@@ -12,12 +12,12 @@ resource "aws_rds_cluster" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }
 
 resource "aws_rds_cluster_instance" "instance1" {
-  identifier         = "rds-cluster-instance1-213-red"
+  identifier         = "rds-cluster-instance1-213-green"
   cluster_identifier = aws_rds_cluster.this.id
   instance_class     = "db.t2.small"
   engine             = aws_rds_cluster.this.engine
@@ -29,7 +29,7 @@ resource "aws_rds_cluster_instance" "instance1" {
 }
 
 resource "aws_rds_cluster_instance" "instance2" {
-  identifier         = "rds-cluster-instance2-213-red"
+  identifier         = "rds-cluster-instance2-213-green"
   cluster_identifier = aws_rds_cluster.this.id
   instance_class     = "db.t2.small"
   engine             = aws_rds_cluster.this.engine

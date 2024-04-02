@@ -1,14 +1,14 @@
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }
 
 resource "aws_db_instance" "this" {
   identifier                      = "database-203-red"
   engine                          = "postgres"
-  engine_version                  = "13.3"
+  engine_version                  = "16.1"
   instance_class                  = "db.t3.micro"
   allocated_storage               = 10
   storage_type                    = "gp2"
@@ -29,7 +29,7 @@ resource "aws_db_instance" "this" {
 
 resource "aws_db_parameter_group" "this" {
   name   = "parameter-group-203-red"
-  family = "postgres13"
+  family = "postgres16"
 
   parameter {
     name  = "log_statement"

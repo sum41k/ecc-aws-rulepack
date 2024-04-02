@@ -1,4 +1,4 @@
-resource "aws_kinesis_stream" ".this" {
+resource "aws_kinesis_stream" "this" {
   name             = "120_kinesis_stream_green"
   shard_count      = 1
   encryption_type  = "KMS"

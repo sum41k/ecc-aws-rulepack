@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "bucket" {
     }
 
     actions = ["s3:GetBucketAcl"]
-    resources = [aws_s3_bucket.this.arn]
+    resources = ["${aws_s3_bucket.this.arn}/*"]
   }
 
   statement {

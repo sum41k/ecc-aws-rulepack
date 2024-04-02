@@ -4,17 +4,18 @@
 		{
 			"Effect": "Allow",
 			"Action": [
+				"batch:DescribeComputeEnvironments",
+				"cloudformation:ListStacks",
+				"cloudwatch:DescribeAlarmsForMetric",
+				"events:ListRules",
+				"events:ListTargetsByRule",
+				"iam:ListVirtualMFADevices",
+				"kafka:ListClustersV2",
+				"lambda:GetFunctionConfiguration",
 				"workspaces:DescribeWorkspaceImages",
 				"workspaces:DescribeWorkspaces",
 				"workspaces:DescribeWorkspacesConnectionStatus",
-				"xray:GetEncryptionConfig",
-				"events:ListRules",
-				"events:ListTargetsByRule",
-				"batch:DescribeComputeEnvironments",
-				"kafka:ListClustersV2",
-				"cloudformation:ListStacks",
-				"iam:ListVirtualMFADevices",
-                "cloudwatch:DescribeAlarmsForMetric"
+				"xray:GetEncryptionConfig"
 			],
 			"Resource": "*"
 		}

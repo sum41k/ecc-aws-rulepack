@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    ebs            = "${local.suffix}_${var.resource_type}_ebs_${local.compliance_status}"
     security_group = "${local.suffix}_${var.resource_type}_sg_${local.compliance_status}"
     vpc            = "${local.suffix}_${var.resource_type}_vpc_${local.compliance_status}"
     ecr_repository = "${local.suffix}_${var.resource_type}_ecr_repository_${local.compliance_status}"

@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    ami            = "${local.suffix}_${var.resource_type}_ami_${local.compliance_status}"
     ebs            = "${local.suffix}_${var.resource_type}_ebs_${local.compliance_status}"
     security_group = "${local.suffix}_${var.resource_type}_sg_${local.compliance_status}"
     vpc            = "${local.suffix}_${var.resource_type}_vpc_${local.compliance_status}"

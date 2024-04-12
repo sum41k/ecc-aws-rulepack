@@ -13,3 +13,7 @@ output "vpc_subnet_1_id" {
 output "vpc_subnet_2_id" {
   value = aws_subnet.subnet2.id
 }
+
+output "kms_key_arn" {
+  value =  aws_kms_key.this.arn 
+}

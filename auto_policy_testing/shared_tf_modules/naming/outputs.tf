@@ -1,5 +1,11 @@
 output "resource_prefix" {
   value = {
+    cfn            = "${local.suffix}-${var.resource_type}-cfn-${local.compliance_status}"
+    sns            = "${local.suffix}_${var.resource_type}_sns_${local.compliance_status}"
+    kms_key        = "${local.suffix}_${var.resource_type}_kms_key_${local.compliance_status}"
+    ami            = "${local.suffix}_${var.resource_type}_ami_${local.compliance_status}"
+    ebs_volume     = "${local.suffix}_${var.resource_type}_ebs_volume_${local.compliance_status}"
+    ebs_snapshot   = "${local.suffix}_${var.resource_type}_ebs_snapshot_${local.compliance_status}"
     security_group = "${local.suffix}_${var.resource_type}_sg_${local.compliance_status}"
     vpc            = "${local.suffix}_${var.resource_type}_vpc_${local.compliance_status}"
     ecr_repository = "${local.suffix}_${var.resource_type}_ecr_repository_${local.compliance_status}"

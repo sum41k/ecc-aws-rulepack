@@ -15,7 +15,7 @@ resource "aws_ebs_volume" "this" {
   }
 }
 
-resource "aws_ebs_snapshot" "ebs_snapshot_without_encrypt" {
+resource "aws_ebs_snapshot" "this" {
   volume_id = aws_ebs_volume.this.id
 
   tags = {
@@ -30,7 +30,7 @@ resource "aws_ebs_volume" "volume_encrypted_with_kms_cmk" {
   kms_key_id        = data.terraform_remote_state.common.outputs.kms_key_arn
   
   tags = {
-    Name = "${module.naming.resource_prefix.ebs}"
+    Name = "${module.naming.resource_prefix.ebs_volume}"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_instance" "ec2_instance_to_test_unused_ebs_volumes" {
   availability_zone = data.aws_availability_zones.this.names[0]
 
   tags = {
-    Name = "${module.naming.resource_prefix.ec2}"
+    Name = "${module.naming.resource_prefix.ec2_instance}"
   }
 }
 

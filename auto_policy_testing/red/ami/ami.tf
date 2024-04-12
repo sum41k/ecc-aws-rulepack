@@ -19,10 +19,10 @@ resource "aws_ebs_snapshot" "this" {
   volume_id = aws_ebs_volume.this.id
 }
 
-resource "aws_ami_launch_permission" "this" {
-  image_id = aws_ami.this.id
-  group    = "all"
-}
+# resource "aws_ami_launch_permission" "this" {
+#   image_id = aws_ami.this.id
+#   group    = "all"
+# }
 
 resource "aws_instance" "this" {
   ami           = data.aws_ami.this.id

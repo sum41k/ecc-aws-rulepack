@@ -21,22 +21,22 @@ resource "aws_ebs_volume" "this" {
 resource "aws_ebs_volume" "default_volume" {
   availability_zone = data.aws_availability_zones.this.names[0]
   size              = 8
-  encrypted         = true
   type              = "gp2"
   provider          = aws.provider2
 }
 
 resource "aws_ebs_snapshot" "this" {
-  volume_id = aws_ebs_volume.this.id
+  volume_id = aws_ebs_volume.default_volume.id
+  provider  = aws.provider2
 }
 
-# resource "null_resource" "this" {
-#   provisioner "local-exec" {
-#     command     = "aws ec2 modify-snapshot-attribute --snapshot-id ${aws_ebs_snapshot.snapshot_from_default_volume.id} --attribute createVolumePermission --operation-type add  --group-names all"
-#     interpreter = ["/bin/bash", "-c"]
-#   }
-#   depends_on = [aws_ebs_snapshot.snapshot_from_default_volume]
-# }
+resource "null_resource" "this" {
+  provisioner "local-exec" {
+    command     = "aws ec2 modify-snapshot-attribute --snapshot-id ${aws_ebs_snapshot.this.id} --attribute createVolumePermission --operation-type add  --group-names all"
+    interpreter = ["/bin/bash", "-c"]
+  }
+  depends_on = [aws_ebs_snapshot.this]
+}
 
 
 # ecc-aws-575-ebs_volumes_attached_to_stopped_ec2_instances
@@ -54,14 +54,3 @@ resource "aws_ec2_instance_state" "this" {
   instance_id = aws_instance.this.id
   state       = "stopped"
 }
-
-
-
-
-
-
-
-
-
-
-

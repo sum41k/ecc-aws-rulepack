@@ -3,16 +3,22 @@
 resource "aws_ebs_volume" "this" {
   availability_zone = data.aws_availability_zones.this.names[0]
   size              = 10
+  tags = {
+    Name = "${module.naming.resource_prefix.ebs_volume}"
+  }
 }
 
 resource "aws_ebs_snapshot" "this" {
   volume_id = aws_ebs_volume.this.id
+  tags = {
+    Name = "${module.naming.resource_prefix.ebs_snapshot}"
+  }
 }
 
 resource "aws_ami" "this" {
-  name                = "${module.naming.resource_prefix.ami}"
-  root_device_name    = "/dev/xvda"
-  
+  name             = module.naming.resource_prefix.ami
+  root_device_name = "/dev/xvda"
+
   ebs_block_device {
     device_name = "/dev/xvda"
     snapshot_id = aws_ebs_snapshot.this.id
@@ -44,4 +50,3 @@ resource "aws_instance" "this" {
     Name = "${module.naming.resource_prefix.ami}"
   }
 }
-

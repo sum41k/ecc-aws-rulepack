@@ -32,6 +32,13 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
                         "AWS": f"arn:aws:iam::{account_id}:role/{ci_role_name}"
                     },
                     "Action": "sts:AssumeRole"
+                },
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "AWS": f"arn:aws:iam::{account_id}:user/Anna_Shcherbak"
+                    },
+                    "Action": "sts:AssumeRole"
                 }
             ]
         }

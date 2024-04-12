@@ -116,23 +116,24 @@ def create_report(policy_execution_outputs: dict,
         # except Exception:
         #     pass
         for detailed_resource in detailed_resources:
-            resource = {}
-            for key in detailed_resource:
-                # if report_fields:
-                #     if key in report_fields:
-                #         resource[key] = detailed_resource.get(key)
-                #     continue
-                current_resource = detailed_resource[key]
-                if isinstance(current_resource, (str, int, float)):
-                    resource[key] = current_resource
-                elif policy_resource.startswith("gcp."):
-                    if type(current_resource) is dict:
-                        for inner_key in current_resource.keys():
-                            resource[key + "_" + inner_key] = current_resource[inner_key]
-                    elif type(current_resource) is list:
-                        if len(current_resource) > 0 and type(current_resource[0]) is not dict:
-                            resource[key] = "\n".join(current_resource)
-            resources.append(resource if resource else detailed_resource)
+            resources.append(detailed_resource)
+            # resource = {}
+            # for key in detailed_resource:
+                # # if report_fields:
+                # #     if key in report_fields:
+                # #         resource[key] = detailed_resource.get(key)
+                # #     continue
+                # current_resource = detailed_resource[key]
+                # if isinstance(current_resource, (str, int, float)):
+                #     resource[key] = current_resource
+                # elif policy_resource.startswith("gcp."):
+                #     if type(current_resource) is dict:
+                #         for inner_key in current_resource.keys():
+                #             resource[key + "_" + inner_key] = current_resource[inner_key]
+                #     elif type(current_resource) is list:
+                #         if len(current_resource) > 0 and type(current_resource[0]) is not dict:
+                #             resource[key] = "\n".join(current_resource)
+            # resources.append(resource if resource else detailed_resource)
 
         entity = {
             "policy_name": policy.get("name", ""),
@@ -150,24 +151,56 @@ def create_report(policy_execution_outputs: dict,
             map_report_fields = json.load(file)
         resource_field = map_report_fields[policy_execution_outputs_test[entity['policy_name']]['policy_resource']]
         resource_field_value = ""
-        for resource in entity["resources"]:
-            if len(resource_field) > 1:
-                resource_field_value = resource
-                for key in resource_field:
-                    resource_field_value = resource_field_value[key]
+        if isinstance(tf_resource_name, str):
+            tf_resource_name = [tf_resource_name]
+        elif isinstance(tf_resource_name, list):
+            tf_resources = tf_resource_name.copy()
+            tf_resource_name_status = {r: False for r in tf_resource_name}
+            for resource in entity["resources"]:
+                if len(resource_field) > 1:
+                    resource_field_value = {r: resource[r] for r in resource_field}
+                else:
+                    resource_field_value = resource[resource_field[0]]
+                for tf_resource in tf_resources:
+                    if isinstance(resource_field_value, str):
+                        if tf_resource == resource_field_value and tf_resource:
+                            tf_resource_name_status[tf_resource] = True
+                            tf_resources.remove(tf_resource)
+                            break
+                    elif isinstance(resource_field_value, dict):
+                        pass
+
+                if all(value is True for value in tf_resource_name_status.values()):
+                    break
+        elif isinstance(tf_resource_name, dict):
+            # tf_resources = tf_resource_name.copy()
+            if isinstance(list(tf_resource_name.values())[0], str) and len(resource_field) > 1:
+                tf_resource_name_status = {r: False for r in tf_resource_name}
+                resource_field_values = {}
+                for resource_field_name in resource_field:
+                    resource_field_values[resource_field_name] = resource[resource_field_name]
             else:
-                resource_field_value = resource[resource_field[0]]
-            if tf_resource_name == resource_field_value and tf_resource_name:
-                resource_found = True
-                break
+                print("Wrong terraform output format!")
+
+
+            #
+            # elif isinstance(list(tf_resource_name.values())[0], list):
+            #     pass
+
+        else:
+            print("Wrong format!")
+
+        resource_found = all(value is True for value in tf_resource_name_status.values())
         if infra_color == "red":
             if not resource_found and tf_resource_name:
+                not_found_resources = [k for k, v in tf_resource_name_status.items() if v is False]
                 entity["errors"].append("ERROR - Error while testing found results.\n"
-                                        f"The created terraform {infra_color} resource ({tf_resource_name}) was not found in the custodian scan results")
+                                        f"The created terraform {infra_color} resource ({', '.join(not_found_resources)}) was not found in the custodian scan results")
         elif infra_color == "green":
-            if resource_found and tf_resource_name:
+            if any(value is True for value in tf_resource_name_status.values()) and tf_resource_name:
+                not_found_resources = [k for k, v in tf_resource_name_status.items() if v is True]
                 entity["errors"].append("ERROR - Error while testing found results.\n"
-                                        f"The created terraform {infra_color} resource ({tf_resource_name}) was found in the custodian scan results")
+                                        f"The created terraform {infra_color} resource ({', '.join(not_found_resources)}) was found in the custodian scan results")
         if not tf_resource_name:
             entity["errors"].append("ERROR - Error while testing found results.\n"
                                     f"OUTPUT variable was not found")

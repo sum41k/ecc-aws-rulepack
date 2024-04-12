@@ -77,9 +77,13 @@ def main():
                 with open(tf_iam_path, 'r') as iam_file:
                     iam_policy_content = json.load(iam_file)
                 iam_policy_permissions = iam_policy_content.get("Statement")[0].get("Action")
-                for permission in iam_policy_permissions:
-                    if permission not in full_resource_type_policy["Statement"][0]["Action"]:
-                        full_resource_type_policy["Statement"][0]["Action"].append(permission)
+                if type(iam_policy_permissions) == str:
+                    if iam_policy_permissions not in full_resource_type_policy["Statement"][0]["Action"]:
+                        full_resource_type_policy["Statement"][0]["Action"].append(iam_policy_permissions)
+                elif type(iam_policy_permissions) == list:
+                    for permission in iam_policy_permissions:
+                        if permission not in full_resource_type_policy["Statement"][0]["Action"]:
+                            full_resource_type_policy["Statement"][0]["Action"].append(permission)
             else:
                 print("File does not exist: ", tf_iam_path)
                 sys.exit(1)

@@ -7,6 +7,9 @@ output "resource_prefix" {
     iam_role        = "${local.suffix}_${var.resource_type}_role_${local.compliance_status}"
     iam_policy      = "${local.suffix}_${var.resource_type}_iam_policy_${local.compliance_status}"
     ec2_instance    = "${local.suffix}_${var.resource_type}_ec2_instance_${local.compliance_status}"
+    apigwv2_stage   = "${local.suffix}_${var.resource_type}_apigwv2_stage_${local.compliance_status}"
+    apigwv2         = "${local.suffix}_${var.resource_type}_apigwv2_${local.compliance_status}"
+    cw_log_group    = "${local.suffix}_${var.resource_type}_log_group_${local.compliance_status}"
   }
 }
 

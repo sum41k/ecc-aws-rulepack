@@ -37,7 +37,7 @@ def read_yaml_file(filepath: str):
     return content
 
 
-def main():
+def pack_iam():
     policies = sorted([file for file in os.listdir(policies_path) if file.endswith('.yml') or file.endswith('.yaml')])
     os.makedirs(iam_path, exist_ok=True)
     cloud = policies[0].split('-')[1]

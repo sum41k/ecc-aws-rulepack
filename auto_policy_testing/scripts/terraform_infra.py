@@ -1,6 +1,8 @@
+import os
+import json
 import timer
 import subprocess
-import json
+
 
 # control text style
 class Color:
@@ -25,6 +27,43 @@ def auto_approve(path, verbosity=False, up=False, remove=False):
         subprocess.run(f"cd {path} ; rm -rfv .terraform* terraform.tfstate*", shell=True, capture_output=True, text=True, check=True)
 
 
+def tf_up(resource, path, cloud, infra_color):
+    print(f"\nTerraform apply '{cloud.lower()}.{resource}...'\n")
+    tf_up_subprocess_result = green_red_infrastructures_up_down(
+        path,
+        infra_color,
+        up=True)
+    return tf_up_subprocess_result
+
+
+def tf_down(resource, path, cloud, infra_color):
+    print(f"\nTerraform destroy '{cloud.lower()}.{resource}...'\n")
+    tf_down_subprocess_result = green_red_infrastructures_up_down(
+        path,
+        infra_color,
+        down=True,
+        remove=True)
+    return tf_down_subprocess_result
+
+
+def common_tf_up(rulepack_testing_path, infra_color):
+    print("\nTerraform apply common resources\n")
+    tf_up_common_subprocess_result = green_red_infrastructures_up_down(
+        os.path.join(rulepack_testing_path, infra_color, 'common_resources'),
+        infra_color,
+        up=True)
+    return tf_up_common_subprocess_result
+
+
+def common_tf_down(rulepack_testing_path, infra_color):
+    print("\nTerraform destroy common resources\n")
+    tf_down_common_subprocess_result = green_red_infrastructures_up_down(
+        os.path.join(rulepack_testing_path, infra_color, 'common_resources'),
+        infra_color,
+        down=True,
+        remove=True)
+    return tf_down_common_subprocess_result
+
 
 # Create/destroy terraform green/red infrastructure
 @timer.time_decorator
@@ -33,8 +72,8 @@ def green_red_infrastructures_up_down(path, infra_color, up=False, down=False, v
         color = infra_color
 
         print(f"{Color.GREEN + 3*'+' + Color.YELLOW + ' Up' if up else Color.RED + 3*'-' + Color.YELLOW + ' Down'}"
-                  f"{Color.RED if color == 'red' else Color.GREEN} {color} {path}"
-                  f"{'' if not verbosity else 'Full path: ' + Color.YELLOW + path} {Color.RESET}")
+              f"{Color.RED if color == 'red' else Color.GREEN} {color} {path}"
+              f"{'' if not verbosity else 'Full path: ' + Color.YELLOW + path} {Color.RESET}")
         if path is not None:
             if up:
                 command = f"cd {path} ; terraform init -no-color {'> /dev/null' if not verbosity else ''}; \
@@ -61,9 +100,9 @@ def output(path, policy_name, resource):
     # Load the JSON output into a variable
     terraform_output = json.loads(output.decode())
     terraform_output = terraform_output[next(iter(terraform_output))]['value']
-    name_prefix = ""
+    resource_id = ""
     if policy_name in terraform_output:
-        name_prefix = terraform_output[policy_name]
+        resource_id = terraform_output[policy_name]
     elif resource in terraform_output:
-        name_prefix = terraform_output[resource]
-    return name_prefix
+        resource_id = terraform_output[resource]
+    return resource_id

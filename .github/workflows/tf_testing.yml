@@ -1,13 +1,15 @@
 name: Terraform testing
 on:
   push:
+    branches:
+      - 'feature/policy_testing'
   # Run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       resource_priority_list:
         type: string
         description: Priority list for resources (you can remove unnecessary resources during testing)
-        default: 'security-group'
+        default: 'ami,apigwv2,ebs,ecr,eni,security-group'
         required: true
 
 
@@ -18,7 +20,7 @@ env:
   CORE_TESTING_FOLDER: ${{ github.workspace }}
   OUTPUT_DIR: ${{ github.workspace }}/auto_policy_testing/output
   AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  resource_priority_list: 'security-group'
+  resource_priority_list: 'ami,apigwv2,ebs,ecr,eni,security-group'
   RED: '\033[0;31m'
 
 jobs:
@@ -45,7 +47,6 @@ jobs:
         shell: bash
         working-directory: auto_policy_testing/scripts
         run: |
-          python pack_iam.py
           python main.py \
             --cloud AWS \
             --infra_color green \
@@ -84,7 +85,6 @@ jobs:
         shell: bash
         working-directory: auto_policy_testing/scripts
         run: |
-          python pack_iam.py
           python main.py \
             --cloud AWS \
             --infra_color red \

@@ -3,14 +3,15 @@ resource "aws_apigatewayv2_api" "this1" {
   protocol_type = "HTTP"
 }
 
+# ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_not_enabled
 resource "aws_apigatewayv2_stage" "this1" {
   api_id = aws_apigatewayv2_api.this1.id
   name   = "${module.naming.resource_prefix.apigwv2_stage}-1"
 
-    access_log_settings {
-      destination_arn = aws_cloudwatch_log_group.this1.arn
-      format          = "$context.identity.sourceIp,$context.identity.caller,$context.identity.user,$context.requestTime,$context.httpMethod,$context.resourcePath,$context.protocol,$context.status,$context.responseLength,$context.requestId"
-    }
+  access_log_settings {
+    destination_arn = aws_cloudwatch_log_group.this1.arn
+    format          = "$context.identity.sourceIp,$context.identity.caller,$context.identity.user,$context.requestTime,$context.httpMethod,$context.resourcePath,$context.protocol,$context.status,$context.responseLength,$context.requestId"
+  }
 }
 
 resource "aws_cloudwatch_log_group" "this1" {
@@ -24,6 +25,7 @@ resource "aws_apigatewayv2_api" "this2" {
   route_selection_expression = "$request.body.action"
 }
 
+# ecc-aws-376-api_gateway_http_api_and_websocket_api_logs_not_enabled
 resource "aws_apigatewayv2_stage" "this2" {
   api_id = aws_apigatewayv2_api.this2.id
   name   = "${module.naming.resource_prefix.apigwv2_stage}-2"

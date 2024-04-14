@@ -15,5 +15,5 @@ output "vpc_subnet_2_id" {
 }
 
 output "kms_key_arn" {
-  value =  aws_kms_key.this.arn 
+  value = aws_kms_key.this.arn
 }

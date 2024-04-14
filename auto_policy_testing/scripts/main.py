@@ -1,10 +1,12 @@
 import os
 import sys
 import scan
+import shutil
 import report
 import argparse
+from pack_iam import pack_iam
 import iam_role_aws
-from terraform_infra import green_red_infrastructures_up_down
+from terraform_infra import *
 
 
 parser = argparse.ArgumentParser()
@@ -25,64 +27,30 @@ RULEPACK_PATH = args.base_dir
 RULEPACK_TESTING_PATH = os.path.join(RULEPACK_PATH, "auto_policy_testing")
 OUTPUT_DIR = args.output_dir
 
-
-def tf_up(resource, path):
-    print(f"\nTerraform apply '{args.cloud.lower()}.{resource}...'\n")
-    tf_up_subprocess_result = green_red_infrastructures_up_down(
-        path,
-        args.infra_color,
-        up=True)
-    return tf_up_subprocess_result
-
-
-def tf_down(resource, path):
-    print(f"\nTerraform destroy '{args.cloud.lower()}.{resource}...'\n")
-    tf_down_subprocess_result = green_red_infrastructures_up_down(
-        path,
-        args.infra_color,
-        down=True,
-        remove=True)
-    return tf_down_subprocess_result
-
-
-def common_tf_up():
-    print("\nTerraform apply common resources\n")
-    tf_up_common_subprocess_result = green_red_infrastructures_up_down(
-        os.path.join(RULEPACK_TESTING_PATH, args.infra_color, 'common_resources'),
-        args.infra_color,
-        up=True)
-    return tf_up_common_subprocess_result
-
-
-def common_tf_down():
-    print("\nTerraform destroy common resources\n")
-    tf_down_common_subprocess_result = green_red_infrastructures_up_down(
-        os.path.join(RULEPACK_TESTING_PATH, args.infra_color, 'common_resources'),
-        args.infra_color,
-        down=True,
-        remove=True)
-    return tf_down_common_subprocess_result
-
 def main():
     # Load yaml file names
     policies = sorted([file for file in os.listdir(os.path.join(RULEPACK_PATH, 'policies')) if
                        file.endswith('.yml') or file.endswith('.yaml')])
     tf_failed = {}
+    if os.path.exists(OUTPUT_DIR):
+        shutil.rmtree(OUTPUT_DIR)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     sa = args.sa
-    if args.cloud == "AWS" and args.sa:
-        role = iam_role_aws.create_delete_readonly_role_aws(create=True, color=args.infra_color)
-        sa = role.get("Role", {}).get("Arn", None)
+    if args.cloud == "AWS":
+        pack_iam()
+        if args.sa:
+            role = iam_role_aws.create_delete_readonly_role_aws(create=True, color=args.infra_color)
+            sa = role.get("Role", {}).get("Arn", None)
     if args.cloud == "GCP":
         sa = args.sa
-    tf_up_common_subprocess_result, tf_up_common_error = common_tf_up()
+    tf_up_common_subprocess_result, tf_up_common_error = common_tf_up(RULEPACK_TESTING_PATH, args.infra_color)
     tf_up_subprocess_result = False
     if tf_up_common_subprocess_result:
         for resource in resource_priority_list:
             path = os.path.join(RULEPACK_TESTING_PATH, args.infra_color, resource)
             if args.cloud == "AWS" and args.sa:
                 iam_role_aws.set_readonly_role_permissions_aws(resource, color=args.infra_color)
-            tf_up_subprocess_result, tf_up_error = tf_up(resource, path)
+            tf_up_subprocess_result, tf_up_error = tf_up(resource, path, args.cloud, args.infra_color)
             if tf_up_subprocess_result:
                 print("\nScan resources\n")
                 try:
@@ -95,7 +63,8 @@ def main():
                         path=path,
                         policies=policies,
                         regions=args.regions,
-                        sa=sa if sa else None
+                        sa=sa if sa else None,
+                        color=args.infra_color
                     ))
                 except Exception as error:
                     print("An exception occurred:", error)
@@ -104,7 +73,7 @@ def main():
                 print("Error during 'terraform apply' for '" + resource + "': \n" + tf_up_error)
                 tf_failed[resource] = "Error during 'terraform apply' for '" + resource + "': \n" + tf_up_error
 
-            tf_down_subprocess_result, tf_down_error = tf_down(resource, path)
+            tf_down_subprocess_result, tf_down_error = tf_down(resource, path, args.cloud, args.infra_color)
             if not tf_down_subprocess_result:
                 print("Error during 'terraform destroy' for '" + resource + "': \n" + tf_down_error)
                 tf_failed[resource] = "Error during 'terraform destroy' for '" + resource + "': \n" + tf_down_error
@@ -112,8 +81,7 @@ def main():
         print("Error during 'terraform apply' for 'common_resources': \n" + tf_up_common_error)
         tf_failed['common_resources'] = "Error during 'terraform apply' for 'common_resources': \n" + tf_up_common_error
 
-    tf_down_common_subprocess_result, tf_down_common_error = common_tf_down()
-
+    tf_down_common_subprocess_result, tf_down_common_error = common_tf_down(RULEPACK_TESTING_PATH, args.infra_color)
 
     if not tf_down_common_subprocess_result:
         print("Error during 'terraform destroy' for 'common_resources': \n" + tf_down_common_error)

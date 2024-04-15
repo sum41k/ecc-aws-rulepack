@@ -1,5 +1,7 @@
 output "resource_prefix" {
   value = {
+    backup_vault   = "${local.suffix}-${var.resource_type}-backup_vault-${local.compliance_status}"
+    backup_plan    = "${local.suffix}-${var.resource_type}-backup_plan-${local.compliance_status}"
     app_flow       = "${local.suffix}-${var.resource_type}-app_flow-${local.compliance_status}"
     cfn            = "${local.suffix}-${var.resource_type}-cfn-${local.compliance_status}"
     sns            = "${local.suffix}_${var.resource_type}_sns_${local.compliance_status}"

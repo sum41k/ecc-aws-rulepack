@@ -57,7 +57,7 @@
 # }
 
 resource "aws_cloudformation_stack" "this" {
-  name = "${module.naming.resource_prefix.cfn}"
+  name = module.naming.resource_prefix.cfn
 
   parameters = {
     VPCCidr = "10.0.0.0/16"
@@ -78,7 +78,7 @@ resource "aws_cloudformation_stack" "this" {
       "Properties" : {
         "CidrBlock" : { "Ref" : "VPCCidr" },
         "Tags" : [
-          {"Key": "Name", "Value": "Primary_CF_VPC"}
+          {"Key": "Name", "Value": "${module.naming.resource_prefix.vpc}"}
         ]
       }
     }

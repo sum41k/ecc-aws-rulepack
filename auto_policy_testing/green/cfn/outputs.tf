@@ -1,5 +1,5 @@
 output "cfn" {
   value = {
-    cnf = aws_cloudformation_stack.this.id
+    cfn = aws_cloudformation_stack.this.id
   }
 }

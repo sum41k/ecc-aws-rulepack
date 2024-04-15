@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    app_flow       = "${local.suffix}-${var.resource_type}-app_flow-${local.compliance_status}"
     cfn            = "${local.suffix}-${var.resource_type}-cfn-${local.compliance_status}"
     sns            = "${local.suffix}_${var.resource_type}_sns_${local.compliance_status}"
     kms_key        = "${local.suffix}_${var.resource_type}_kms_key_${local.compliance_status}"

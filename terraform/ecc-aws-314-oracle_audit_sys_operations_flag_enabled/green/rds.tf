@@ -22,7 +22,7 @@ resource "aws_db_instance" "this" {
 
 resource "aws_db_parameter_group" "this" {
   name   = "parameter-group-314-green"
-  family = "oracle-ee-12.1"
+  family = "oracle-ee-19"
 
   parameter {
     apply_method = "pending-reboot"

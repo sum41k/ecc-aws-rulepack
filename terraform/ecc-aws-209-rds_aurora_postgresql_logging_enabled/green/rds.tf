@@ -7,7 +7,7 @@ resource "random_password" "this" {
 resource "aws_rds_cluster" "this" {
   cluster_identifier              = "aurora-cluster-209-green"
   engine                          = "aurora-postgresql"
-  engine_version                  = "13.3"
+  engine_version                  = "13.13"
   database_name                   = "green209"
   master_username                 = "root"
   master_password                 = random_password.this.result

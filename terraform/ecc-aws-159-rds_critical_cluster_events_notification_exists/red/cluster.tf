@@ -11,7 +11,7 @@ resource "aws_rds_cluster" "default" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  numeric           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }
 

@@ -12,7 +12,8 @@ resource "aws_redshift_cluster" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   lower            = true
+  min_numeric      = 1
   override_special = "!#$%*()-_=+[]{}:?"
 }

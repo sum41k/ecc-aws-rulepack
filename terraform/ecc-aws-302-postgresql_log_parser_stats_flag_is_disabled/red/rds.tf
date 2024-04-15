@@ -7,7 +7,7 @@ resource "random_password" "this" {
 resource "aws_db_instance" "this" {
   identifier                      = "database-302-red"
   engine                          = "postgres"
-  engine_version                  = "13.3"
+  engine_version                  = "13.14"
   instance_class                  = "db.t3.micro"
   allocated_storage               = 10
   storage_type                    = "gp2"

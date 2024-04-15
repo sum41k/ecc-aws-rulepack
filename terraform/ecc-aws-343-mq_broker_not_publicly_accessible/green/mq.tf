@@ -1,7 +1,7 @@
 resource "aws_mq_broker" "this" {
   broker_name                = "mq-broker-343-green"
   engine_type                = "ActiveMQ"
-  engine_version             = "5.15.9"
+  engine_version             = "5.17.6"
   host_instance_type         = "mq.t2.micro"
   publicly_accessible        = false
 
@@ -13,6 +13,5 @@ resource "aws_mq_broker" "this" {
 
 resource "random_password" "this" {
   length           = 12
-  special          = true
-  override_special = "!#$%*()-_=+[]{}:?"
+  special          = false
 }

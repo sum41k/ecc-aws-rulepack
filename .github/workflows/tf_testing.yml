@@ -12,6 +12,8 @@ on:
         default: 'ami,apigwv2,ebs,ecr,eni,security-group'
         required: true
 
+concurrency:
+  group: ${{ github.workflow }}
 
 env:
   TF_VAR_project_name: ${{ secrets.TF_VAR_project }}

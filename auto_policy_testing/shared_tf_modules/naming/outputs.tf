@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    dynamodb_table = "${local.suffix}-${var.resource_type}-dynamodb_table-${local.compliance_status}"
     backup_vault   = "${local.suffix}-${var.resource_type}-backup_vault-${local.compliance_status}"
     backup_plan    = "${local.suffix}-${var.resource_type}-backup_plan-${local.compliance_status}"
     app_flow       = "${local.suffix}-${var.resource_type}-app_flow-${local.compliance_status}"

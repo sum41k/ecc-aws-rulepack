@@ -1,5 +1,30 @@
 # Changelog
 
+## [v5.0] - 2024-04-17
+### :sparkles: New Policies
+- [`1f3b9fc`](https://github.com/epam/ecc-aws-rulepack/commit/1f3b9fcac5a3136ecd420164580e4eb83dd3f633) - added policy ecc-aws-218-secrets_manager_rotation_enabled
+- [`7428c6c`](https://github.com/epam/ecc-aws-rulepack/commit/7428c6c1232421ca86e3b8ad92e194878bb10713) - added policy ecc-aws-219-secrets_manager_successful_rotation_check
+- [`efd83c8`](https://github.com/epam/ecc-aws-rulepack/commit/efd83c8b23da994c29f3bc354ce4e6ea7d6781fc) - added policy ecc-aws-220-secrets_manager_unused_secret
+
+### :wrench: Updates
+- [`da86c3c`](https://github.com/epam/ecc-aws-rulepack/commit/da86c3cf3f6ebbd91e1f6f4a161125cc19cf0b29) - update iam/All-permission_*.json files
+- [`6f9805f`](https://github.com/epam/ecc-aws-rulepack/commit/6f9805f0a2b610248e1b2655aa6365d17785082d) - update terraforms 001-288 to provider version 5
+- [`0bba04a`](https://github.com/epam/ecc-aws-rulepack/commit/0bba04ad5032b1923bd9da789ff135072b22f346) - update terraforms 289-347 to provider version 5
+- [`169df56`](https://github.com/epam/ecc-aws-rulepack/commit/169df56a7702a72e42516bdcd97c0c5bc596724d) - update terraform to provider version 5 for policies 348, 349, 366, 377, 378, 379, 458, 462, 469, 471, 472, 489, 490, 517, 531
+- [`5575d28`](https://github.com/epam/ecc-aws-rulepack/commit/5575d280c07ad06a0a82a8bdc132aa59da50342f) - update terraform to provider version 5 for policies 386, 387, 388, 374, 491, 492, 493, 494, 520, 521, 365, 510, 506, 505, 534
+- [`4d0821b`](https://github.com/epam/ecc-aws-rulepack/commit/4d0821b36b26794826e3d5de917a579f2d1124eb) - update terraforms to provider version 5 for a number of policies (see the list in the commit message)
+- [`750679f`](https://github.com/epam/ecc-aws-rulepack/commit/750679fed1f0d0b1fd216b931765f387ffd0e8ce) - update terraforms to provider version 5 for a number of policies (see the list in the commit message)
+- [`989598f`](https://github.com/epam/ecc-aws-rulepack/commit/989598fbc73846e7958b9e2ab6efb02ab33450e7) - update iam permissions for policies 396 and 476
+- [`f333850`](https://github.com/epam/ecc-aws-rulepack/commit/f333850f63cf26a1cec86a65bd9ee7a01109bfce) - fix terraform for policies 383, 384, 385, 474, 475, 476, 479, 488, 513, 514, 529, 552, 503, 504, 461
+
+### :adhesive_bandage: Terraform Fixes
+- [`3608353`](https://github.com/epam/ecc-aws-rulepack/commit/3608353c760e2e8d6ef0c5846f0e569f24cf62c7) - fixed terraform for policy 186
+
+
+### :heavy_minus_sign: Deletions
+- [`205475a`](https://github.com/epam/ecc-aws-rulepack/commit/205475a7139390a0e77805a21b5ae0497497f924) - delete terraform for policy 016
+
+
 ## [v4.0] - 2024-01-25
 ### :sparkles: New Policies
 - [`5254033`](https://github.com/epam/ecc-aws-rulepack/commit/52540332468f03dfcc1a2b931e09181152b324f1) - added policy ecc-aws-571-stopped_rds_instances_removed
@@ -130,3 +155,4 @@
 [v2.0]: https://github.com/epam/ecc-aws-rulepack/compare/v1.0...v2.0
 [v3.0]: https://github.com/epam/ecc-aws-rulepack/compare/v2.0...v3.0
 [v4.0]: https://github.com/epam/ecc-aws-rulepack/compare/v3.0...v4.0
+[v5.0]: https://github.com/epam/ecc-aws-rulepack/compare/v4.0...v5.0

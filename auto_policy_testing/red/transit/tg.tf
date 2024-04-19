@@ -1,4 +1,4 @@
-resource "aws_ec2_transit_gateway" "this" { 
+resource "aws_ec2_transit_gateway" "this" {
   provider                        = aws.provider2
   default_route_table_association = "enable"
   default_route_table_propagation = "enable"

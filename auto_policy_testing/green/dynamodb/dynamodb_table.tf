@@ -1,9 +1,18 @@
 resource "aws_dynamodb_table" "this" {
-  name         = "${module.naming.resource_prefix.dynamodb_table}"
-  hash_key     = "GreenTableHashKey"
-  billing_mode = "PROVISIONED"
+  name           = module.naming.resource_prefix.dynamodb_table
+  hash_key       = "GreenTableHashKey"
+  billing_mode   = "PROVISIONED"
   read_capacity  = 1
   write_capacity = 1
+
+  point_in_time_recovery {
+    enabled = true
+  }
+
+  server_side_encryption {
+    enabled     = true
+    kms_key_arn = data.terraform_remote_state.common.outputs.kms_key_arn
+  }
 
   attribute {
     name = "GreenTableHashKey"

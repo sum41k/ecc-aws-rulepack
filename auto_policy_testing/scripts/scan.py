@@ -68,9 +68,9 @@ def custodian_run(policy_execution_outputs: dict,
                     process = subprocess.Popen([command], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
                     process.wait()
                     policy_resource = policy_resource.split('.')[1] if "." in policy_resource else policy_resource
-                    cloud_resoure_id = output(path, policy_name=policy.split('.')[0], resource=policy_resource)
+                    cloud_resource_id = output(path, policy_name=policy.split('.')[0], resource=policy_resource)
                     policy_execution_outputs[policy.split('.')[0]] = {'scan_result': process.stdout.read().decode('utf-8'),
-                                                                      'resource_id': cloud_resoure_id,
+                                                                      'resource_id': cloud_resource_id,
                                                                       'policy_resource': policy_resource}
                     if region != "default":
                         policy_execution_outputs[policy.split('.')[0]]['region'] = region

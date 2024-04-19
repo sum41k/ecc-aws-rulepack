@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    elastic_beanstalk = "${local.suffix}-${var.resource_type}-elastic_beanstalk-${local.compliance_status}"
     elasticache    = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"
     waf            = "${local.suffix}-${var.resource_type}-waf-${local.compliance_status}"
     dynamodb_table = "${local.suffix}-${var.resource_type}-dynamodb_table-${local.compliance_status}"

@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    elastic_beanstalk = "${local.suffix}-${var.resource_type}-elastic_beanstalk-${local.compliance_status}"
     elasticache    = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"
     waf_acl            = "${local.suffix}-${var.resource_type}-waf_acl-${local.compliance_status}"
     waf_rule            = "${local.suffix}-${var.resource_type}-waf_rule-${local.compliance_status}"

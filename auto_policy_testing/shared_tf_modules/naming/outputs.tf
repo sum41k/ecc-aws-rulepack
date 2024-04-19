@@ -1,5 +1,11 @@
 output "resource_prefix" {
   value = {
+    elasticache    = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"
+    waf            = "${local.suffix}-${var.resource_type}-waf-${local.compliance_status}"
+    dynamodb_table = "${local.suffix}-${var.resource_type}-dynamodb_table-${local.compliance_status}"
+    backup_vault   = "${local.suffix}-${var.resource_type}-backup_vault-${local.compliance_status}"
+    backup_plan    = "${local.suffix}-${var.resource_type}-backup_plan-${local.compliance_status}"
+    app_flow       = "${local.suffix}-${var.resource_type}-app_flow-${local.compliance_status}"
     cfn            = "${local.suffix}-${var.resource_type}-cfn-${local.compliance_status}"
     sns            = "${local.suffix}_${var.resource_type}_sns_${local.compliance_status}"
     kms_key        = "${local.suffix}_${var.resource_type}_kms_key_${local.compliance_status}"

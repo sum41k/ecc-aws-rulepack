@@ -2,7 +2,7 @@ output "resource_prefix" {
   value = {
     beanstalk         = "${local.suffix}_${var.resource_type}_beanstalk_${local.compliance_status}"
     beanstalk_env     = "${local.suffix}-beanstalk-env-${local.compliance_status}"
-    elasticache       = "${local.suffix}_${var.resource_type}_elasticache_${local.compliance_status}"
+    elasticache       = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"
     waf_acl           = "${local.suffix}_${var.resource_type}_waf_acl_${local.compliance_status}"
     waf_rule          = "${local.suffix}_${var.resource_type}_waf_rule_${local.compliance_status}"
     waf_group         = "${local.suffix}_${var.resource_type}_waf_grp_${local.compliance_status}"

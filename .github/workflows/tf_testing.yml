@@ -9,7 +9,7 @@ on:
       resource_priority_list:
         type: string
         description: Priority list for resources (you can remove unnecessary resources during testing)
-        default: 'ami,apigwv2,ebs,ecr,eni,security-group'
+        default: ''
         required: true
 
 concurrency:
@@ -22,7 +22,7 @@ env:
   CORE_TESTING_FOLDER: ${{ github.workspace }}
   OUTPUT_DIR: ${{ github.workspace }}/auto_policy_testing/output
   AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  resource_priority_list: 'ami,apigwv2,ebs,ecr,eni,security-group,cfn'
+  resource_priority_list: 'app-flow,backup,dynamodb,eip,elasticache,transit,vpc,vpn,waf' #'ami,apigwv2,ebs,ecr,eni,security-group,cfn'
   RED: '\033[0;31m'
 
 jobs:

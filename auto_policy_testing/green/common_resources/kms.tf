@@ -8,6 +8,6 @@ resource "aws_kms_key" "this" {
 }
 
 resource "aws_kms_alias" "this" {
-  name          = "alias/${module.naming.resource_prefix.kms_key}"
+  name          = "alias/${module.naming.resource_prefix.kms_key}-test"
   target_key_id = aws_kms_key.this.key_id
 }

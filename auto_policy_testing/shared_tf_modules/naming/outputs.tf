@@ -1,5 +1,7 @@
 output "resource_prefix" {
   value = {
+    efs               = "${local.suffix}_${var.resource_type}_efs_${local.compliance_status}"
+    dlm_policy        = "${local.suffix}_${var.resource_type}_dlm_policy_${local.compliance_status}"
     beanstalk         = "${local.suffix}_${var.resource_type}_beanstalk_${local.compliance_status}"
     beanstalk_env     = "${local.suffix}-beanstalk-env-${local.compliance_status}"
     elasticache       = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"

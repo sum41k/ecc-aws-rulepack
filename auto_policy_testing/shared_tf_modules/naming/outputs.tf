@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    dlm_policy        = "${local.suffix}-${var.resource_type}-dlm_policy-${local.compliance_status}"
     dax               = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
     elastic_beanstalk = "${local.suffix}-${var.resource_type}-${local.compliance_status}"
     elasticache    = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"

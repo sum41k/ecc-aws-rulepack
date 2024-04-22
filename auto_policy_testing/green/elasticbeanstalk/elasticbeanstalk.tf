@@ -4,7 +4,7 @@ resource "aws_elastic_beanstalk_application" "this" {
 }
 
 resource "aws_elastic_beanstalk_environment" "this" {
-  name                = "environment-green"
+  name                = "${module.naming.resource_prefix.elastic_beanstalk}"
   application         = aws_elastic_beanstalk_application.this.name
   solution_stack_name = "64bit Amazon Linux 2 v3.3.7 running Python 3.8"
 

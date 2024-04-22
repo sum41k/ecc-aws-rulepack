@@ -14,16 +14,40 @@ data "aws_ami" "this" {
   }
 }
 
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
 resource "aws_autoscaling_group" "this" {
   name               = "471-autoscaling_group-red"
-  availability_zones = ["us-east-1a"]
+  availability_zones = [data.aws_availability_zones.available.names[0]]
   desired_capacity   = 1
   max_size           = 1
   min_size           = 1
 
-  launch_template {
-    id      = aws_launch_template.this.id
-    version = "$Latest"
+  mixed_instances_policy {
+    instances_distribution {
+      on_demand_base_capacity                  = 0
+      on_demand_percentage_above_base_capacity = 25
+      spot_allocation_strategy                 = "capacity-optimized"
+    }
+
+    launch_template {
+      launch_template_specification {
+        launch_template_id = aws_launch_template.this.id
+        version = "$Latest"
+      }
+
+      override {
+        instance_type     = "t2.nano"
+        weighted_capacity = "3"
+      }
+
+      override {
+        instance_type     = "t2.small"
+        weighted_capacity = "2"
+      }
+    }
   }
 
   tag {

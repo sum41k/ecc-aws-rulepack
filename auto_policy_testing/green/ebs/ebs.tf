@@ -28,7 +28,7 @@ resource "aws_ebs_volume" "volume_encrypted_with_kms_cmk" {
   size              = 5
   encrypted         = true
   kms_key_id        = data.terraform_remote_state.common.outputs.kms_key_arn
-  
+
   tags = {
     Name = "${module.naming.resource_prefix.ebs_volume}"
   }

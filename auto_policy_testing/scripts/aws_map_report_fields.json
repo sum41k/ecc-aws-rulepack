@@ -3,7 +3,7 @@
   "acm-certificate": ["CertificateArn"],
   "airflow": ["Arn"],
   "ami": ["ImageId"],
-  "apigwv2-stage": ["ApiId"],
+  "apigwv2-stage": ["c7n:parent-id", "StageName"],
   "api-stage": ["StageName"],
   "app-elb": ["LoadBalancerArn"],
   "app-flow": ["flowArn"],

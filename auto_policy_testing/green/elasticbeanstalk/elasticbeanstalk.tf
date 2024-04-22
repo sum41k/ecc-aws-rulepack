@@ -1,10 +1,10 @@
 resource "aws_elastic_beanstalk_application" "this" {
-  name        = "${module.naming.resource_prefix.elastic_beanstalk}"
-  description = "${module.naming.resource_prefix.elastic_beanstalk}"
+  name        = module.naming.resource_prefix.beanstalk
+  description = module.naming.resource_prefix.beanstalk
 }
 
 resource "aws_elastic_beanstalk_environment" "this" {
-  name                = "${module.naming.resource_prefix.elastic_beanstalk}"
+  name                = module.naming.resource_prefix.beanstalk_env
   application         = aws_elastic_beanstalk_application.this.name
   solution_stack_name = "64bit Amazon Linux 2 v3.3.7 running Python 3.8"
 

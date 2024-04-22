@@ -14,11 +14,11 @@ resource "aws_db_instance" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }
 
 resource "aws_db_snapshot" "this" {
-  db_instance_identifier = aws_db_instance.this.id
+  db_instance_identifier = aws_db_instance.this.identifier
   db_snapshot_identifier = "rds-snapshot-090-green"
 }

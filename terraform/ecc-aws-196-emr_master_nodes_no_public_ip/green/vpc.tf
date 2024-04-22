@@ -228,7 +228,7 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 }
 resource "aws_eip" "this" {
-  vpc        = true
+  domain     = "vpc"
   depends_on = [aws_internet_gateway.this]
 }
 resource "aws_nat_gateway" "this" {

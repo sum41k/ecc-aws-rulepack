@@ -78,6 +78,6 @@ resource "aws_kms_key" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }

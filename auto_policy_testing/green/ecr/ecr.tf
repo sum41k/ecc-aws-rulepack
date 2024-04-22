@@ -4,9 +4,9 @@
 # ecc-aws-492-ecr_private_lifecycle_policy_configured
 
 resource "aws_ecr_repository" "this" {
-  name                 = "${module.naming.resource_prefix.ecr_repository}"
+  name                 = module.naming.resource_prefix.ecr_repository
   image_tag_mutability = "IMMUTABLE"
-  
+
   encryption_configuration {
     encryption_type = "KMS"
   }

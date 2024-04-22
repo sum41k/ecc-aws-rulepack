@@ -4,9 +4,9 @@ data "aws_availability_zones" "this" {
 
 data "aws_ami" "this" {
   most_recent = true
-  owners = ["amazon"]
+  owners      = ["amazon"]
   filter {
-    name = "name"
+    name   = "name"
     values = ["amzn2-ami-hvm*"]
   }
 }

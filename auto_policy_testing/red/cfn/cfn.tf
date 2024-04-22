@@ -1,7 +1,7 @@
 resource "aws_cloudformation_stack" "this" {
-  name          = "${module.naming.resource_prefix.cfn}"
-  provider      = aws.provider2
-  
+  name     = module.naming.resource_prefix.cfn
+  provider = aws.provider2
+
   template_body = <<STACK
 {
     "Resources": {
@@ -10,12 +10,19 @@ resource "aws_cloudformation_stack" "this" {
             "VersioningConfiguration": {
               "Status": "Enabled"
             },
-            "BucketName" : "s3-bucket-476-red"},
+            "BucketName" : "${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result}"},
             "Type" : "AWS::S3::Bucket"
       }
     }
 }
 STACK
+
+  depends_on = [random_integer.this]
+}
+
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
 }
 
 resource "time_sleep" "this" {
@@ -26,7 +33,7 @@ resource "time_sleep" "this" {
 
 resource "null_resource" "this" {
   provisioner "local-exec" {
-    command = "aws s3api put-bucket-versioning --bucket s3-bucket-476-red --versioning-configuration Status=Suspended && aws cloudformation detect-stack-drift --stack-name ${module.naming.resource_prefix.cfn}"
+    command = "aws s3api put-bucket-versioning --bucket ${module.naming.resource_prefix.s3_bucket}-${random_integer.this.result} --versioning-configuration Status=Suspended && aws cloudformation detect-stack-drift --stack-name ${module.naming.resource_prefix.cfn}"
     # interpreter = ["bash", "-c"]
   }
 

@@ -10,6 +10,6 @@ resource "aws_redshift_cluster" "this" {
 resource "random_password" "this" {
   length           = 12
   special          = true
-  number           = true
+  numeric          = true
   override_special = "!#$%*()-_=+[]{}:?"
 }

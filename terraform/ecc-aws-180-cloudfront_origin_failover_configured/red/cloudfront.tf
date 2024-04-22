@@ -7,6 +7,11 @@ locals {
   s3_origin_id = "myredS3"
 }
 
+resource "random_integer" "this" {
+  min = 1
+  max = 10000000
+}
+
 data "aws_caller_identity" "this" {
   provider = aws
 }

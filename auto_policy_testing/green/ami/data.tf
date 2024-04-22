@@ -4,18 +4,18 @@ data "aws_availability_zones" "this" {
 
 data "aws_ami" "ami" {
   most_recent = true
-  owners = ["amazon"]
+  owners      = ["amazon"]
   filter {
-    name = "name"
+    name   = "name"
     values = ["amzn2-ami-hvm*"]
   }
 }
 
 data "aws_ami" "this" {
   most_recent = true
-  owners = ["self"]
+  owners      = ["self"]
   filter {
-    name = "name"
+    name   = "name"
     values = ["${module.naming.resource_prefix.ami}_from_instance"]
   }
   depends_on = [aws_ami_from_instance.this]

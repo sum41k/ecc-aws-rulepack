@@ -17,6 +17,15 @@ def check_role_exists(color):
         role_exists = False
     return role_exists
 
+def check_policy_exists(readonly_role_name, policy_name):
+    client = boto3.client('iam')
+    try:
+        response = client.get_role_policy(RoleName=readonly_role_name, PolicyName=policy_name)
+        policy_exists = True
+    except client.exceptions.NoSuchEntityException:
+        policy_exists = False
+    return policy_exists
+
 def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
     readonly_role_name_color = f"{readonly_role_name}_{color}"
     sts = boto3.client("sts")
@@ -60,7 +69,8 @@ def create_delete_readonly_role_aws(create=False, delete=False, color = ''):
     elif delete:
         if check_role_exists(color):
             try:
-                client.delete_role_policy(RoleName=readonly_role_name_color, PolicyName=policy_name)
+                if check_policy_exists(readonly_role_name_color, policy_name):
+                    client.delete_role_policy(RoleName=readonly_role_name_color, PolicyName=policy_name)
                 client.delete_role(RoleName=readonly_role_name_color)
                 print(f"Deleted role {readonly_role_name_color}.")
             except botocore.exceptions.ClientError:

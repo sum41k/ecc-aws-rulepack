@@ -1,1 +1,1 @@
-resource "aws_eip" "this" { }
+resource "aws_eip" "this" {}

@@ -194,7 +194,6 @@
                 "s3:GetLifecycleConfiguration",
                 "s3:GetReplicationConfiguration",
                 "s3:ListAllMyBuckets",
-                "s3:GetBucketLifecycle",
                 "s3:GetEncryptionConfiguration",
                 "s3:GetBucketPublicAccessBlock",
                 "sagemaker:DescribeEndpointConfig",

@@ -4,8 +4,8 @@ resource "aws_vpc" "this" {
 }
 
 resource "aws_security_group" "this" {
-  name        = "187_security_group_red"
-  description = "187_security_group_description_red"
+  name        = module.naming.resource_prefix.security_group
+  description = module.naming.resource_prefix.security_group
 }
 
 resource "aws_vpc_endpoint" "this" {

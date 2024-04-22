@@ -44,8 +44,8 @@ resource "aws_instance" "this" {
   ami           = data.aws_ami.this.id
   instance_type = "t2.micro"
   subnet_id     = data.aws_subnets.this.ids[0]
-  
-   tags = {
+
+  tags = {
     Name = "${module.naming.resource_prefix.ec2_instance}"
   }
 }

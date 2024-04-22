@@ -7,7 +7,7 @@ resource "random_password" "this" {
 resource "aws_rds_cluster" "this" {
   cluster_identifier              = "aurora-cluster-208-green"
   engine                          = "aurora-mysql"
-  engine_version                  = "5.7.mysql_aurora.2.10.0"
+  engine_version                  = "5.7.mysql_aurora.2.12.1"
   database_name                   = "green208"
   master_username                 = "root"
   master_password                 = random_password.this.result

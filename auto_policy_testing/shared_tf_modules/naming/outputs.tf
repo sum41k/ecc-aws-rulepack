@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    firehose          = "${local.suffix}_${var.resource_type}_firehose_${local.compliance_status}" 
     efs               = "${local.suffix}_${var.resource_type}_efs_${local.compliance_status}"
     dlm_policy        = "${local.suffix}_${var.resource_type}_dlm_policy_${local.compliance_status}"
     beanstalk         = "${local.suffix}_${var.resource_type}_beanstalk_${local.compliance_status}"

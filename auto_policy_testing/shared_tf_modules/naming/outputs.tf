@@ -34,7 +34,7 @@ output "resource_prefix" {
     cw_log_group      = "${local.suffix}_${var.resource_type}_lg_${local.compliance_status}"
     s3_bucket         = "${local.suffix}-${var.resource_type}-bucket-${local.compliance_status}"
     vpn_gtw           = "${local.suffix}-${var.resource_type}-vpn_gtw-${local.compliance_status}"
-
+    dax               = "${local.suffix}-${var.resource_type}-dax-${local.compliance_status}"
   }
 }
 

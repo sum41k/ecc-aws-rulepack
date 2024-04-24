@@ -4,13 +4,13 @@ on:
     branches:
       - 'feature/policy_testing'
   # Run this workflow manually from the Actions tab
-  workflow_dispatch:
-    inputs:
-      resource_priority_list:
-        type: string
-        description: Priority list for resources (you can remove unnecessary resources during testing)
-        default: ''
-        required: true
+  # workflow_dispatch:
+  #   inputs:
+  #     resource_priority_list:
+  #       type: string
+  #       description: Priority list for resources (you can remove unnecessary resources during testing)
+  #       default: 'efs'
+  #       required: true
 
 concurrency:
   group: ${{ github.workflow }}
@@ -22,7 +22,7 @@ env:
   CORE_TESTING_FOLDER: ${{ github.workspace }}
   OUTPUT_DIR: ${{ github.workspace }}/auto_policy_testing/output
   AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  resource_priority_list: ''
+  resource_priority_list: 'firehose'
   RED: '\033[0;31m'
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
-          role-session-name: ECC-AWS-RULEPACK_CI
+          role-session-name: ECC-AWS-RULEPACK_CI-GREEN
           aws-region: ${{ vars.AWS_REGION }}
       - name: Install dependencies
         shell: bash
@@ -76,7 +76,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
-          role-session-name: ECC-AWS-RULEPACK_CI
+          role-session-name: ECC-AWS-RULEPACK_CI-RED
           aws-region: ${{ vars.AWS_REGION }}
       - name: Install dependencies
         shell: bash

@@ -1,6 +1,5 @@
 resource "aws_iam_role" "this" {
   name      = "${module.naming.resource_prefix.dlm_policy}"
-  provider  = aws.provider2
 
   assume_role_policy = <<EOF
 {
@@ -22,7 +21,6 @@ EOF
 resource "aws_iam_role_policy" "this" {
   name      = "${module.naming.resource_prefix.dlm_policy}"
   role      = aws_iam_role.this.id
-  provider  = aws.provider2
 
   policy = <<EOF
 {
@@ -53,10 +51,10 @@ EOF
 }
 
 resource "aws_dlm_lifecycle_policy" "this" {
+  provider           = aws.provider2
   description        = "${module.naming.resource_prefix.dlm_policy}"
   execution_role_arn = aws_iam_role.this.arn
   state              = "ENABLED"
-  provider           = aws.provider2
 
   policy_details {
     resource_types = ["VOLUME"]
@@ -76,7 +74,7 @@ resource "aws_dlm_lifecycle_policy" "this" {
     }
     target_tags = {
       CustodianRule    = "${module.naming.resource_prefix.dlm_policy}"
-      ComplianceStatus = "Green"
+      ComplianceStatus = "Red"
     }
   }
 }

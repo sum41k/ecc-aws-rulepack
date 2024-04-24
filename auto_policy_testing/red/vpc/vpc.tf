@@ -10,7 +10,7 @@ resource "aws_security_group" "this" {
 
 resource "aws_vpc_endpoint" "this" {
   vpc_id            = aws_vpc.this.id
-  service_name      = "com.amazonaws.us-east-1.s3"
+  service_name      = "com.amazonaws.${var.region}.s3"
   vpc_endpoint_type = "Interface"
   provider          = aws.provider2
 

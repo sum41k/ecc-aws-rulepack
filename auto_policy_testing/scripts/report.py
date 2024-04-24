@@ -248,6 +248,9 @@ def create_report(policy_execution_outputs: dict,
         else:
             entity["errors"].append("ERROR - Wrong terraform output format, it must be one of str, list, or dict!")
 
+        if tf_resource_name_status == {}:
+            tf_resource_name_status = {tf_resource_id: False}
+
         if infra_color == "red":
             if not resource_found and tf_resource_id:
                 if isinstance(tf_resource_name_status, dict):

@@ -13,7 +13,7 @@ resource "aws_glacier_vault" "this" {
           "Action": [
              "glacier:ListVaults"
           ],
-          "Resource": "arn:aws:glacier:us-east-1:${data.aws_caller_identity.this.account_id}:vaults/${module.naming.resource_prefix.glacier}"
+          "Resource": "arn:aws:glacier:${var.region}:${data.aws_caller_identity.this.account_id}:vaults/${module.naming.resource_prefix.glacier}"
        }
     ]
 }

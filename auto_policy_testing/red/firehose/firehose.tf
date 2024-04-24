@@ -1,5 +1,5 @@
 resource "aws_iam_role" "firehose_role" {
-  name = "${module.naming.resource_prefix.firehose}"
+  name = "${module.naming.resource_prefix.iam_role}-firehose"
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_role" "lambda_iam" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+  name = "${module.naming.resource_prefix.iam_role}-lambda"
 
   assume_role_policy = <<EOF
 {

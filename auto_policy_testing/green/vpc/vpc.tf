@@ -18,7 +18,7 @@ resource "aws_security_group" "this" {
 
 resource "aws_vpc_endpoint" "this" {
   vpc_id            = data.terraform_remote_state.common.outputs.vpc_id
-  service_name      = "com.amazonaws.us-east-1.ec2"
+  service_name      = "com.amazonaws.${var.region}.ec2"
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [

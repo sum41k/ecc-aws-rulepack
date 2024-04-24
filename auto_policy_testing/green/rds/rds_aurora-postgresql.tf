@@ -45,13 +45,13 @@ resource "aws_db_parameter_group" "aurora-postgresql" {
   name   = "${module.naming.resource_prefix.rds_param_grp}-aurora-postgresql"
   family = data.aws_rds_engine_version.aurora-postgresql.parameter_group_family
 
-  # parameter {
-  #   name  = "log_statement"
-  #   value = "all"
-  # }
+  parameter {
+    name  = "log_statement"
+    value = "all"
+  }
 
-  # parameter {
-  #   name  = "log_min_duration_statement"
-  #   value = "1"
-  # }
+  parameter {
+    name  = "log_min_duration_statement"
+    value = "1"
+  }
 }

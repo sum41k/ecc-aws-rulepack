@@ -1,5 +1,6 @@
 resource "aws_rds_cluster" "aurora-mysql" {
   cluster_identifier                  = "${module.naming.resource_prefix.rds_cluster}-aurora-mysql"
+  availability_zones                  = [data.aws_availability_zones.this.names[0], data.aws_availability_zones.this.names[1], data.aws_availability_zones.this.names[2]]
   engine                              = "aurora-mysql"
   engine_version                      = data.aws_rds_engine_version.aurora-mysql.version_actual
   master_username                     = "root"
@@ -51,8 +52,8 @@ resource "aws_rds_cluster_instance" "aurora-mysql1" {
   engine_version          = aws_rds_cluster.aurora-mysql.engine_version
   instance_class          = "db.t3.medium"
   apply_immediately       = true
-  # db_parameter_group_name = aws_db_parameter_group.aurora-mysql.id
-  availability_zone       = "${var.region}a"
+  db_parameter_group_name = aws_db_parameter_group.aurora-mysql.id
+  availability_zone       = data.aws_availability_zones.this.names[0]
 }
 
 resource "aws_rds_cluster_instance" "aurora-mysql2" {
@@ -63,24 +64,24 @@ resource "aws_rds_cluster_instance" "aurora-mysql2" {
   instance_class          = "db.t3.medium"
   apply_immediately       = true
   db_parameter_group_name = aws_db_parameter_group.aurora-mysql.id
-  availability_zone       = "${var.region}c"
+  availability_zone       = data.aws_availability_zones.this.names[1]
 }
 
 resource "aws_db_parameter_group" "aurora-mysql" {
   name   = "${module.naming.resource_prefix.rds_param_grp}-aurora-mysql"
   family = data.aws_rds_engine_version.aurora-mysql.parameter_group_family
 
-  # parameter {
-  #   name  = "general_log"
-  #   value = "1"
-  # }
-  # parameter {
-  #   name  = "slow_query_log"
-  #   value = "1"
-  # }
+  parameter {
+    name  = "general_log"
+    value = "1"
+  }
+  parameter {
+    name  = "slow_query_log"
+    value = "1"
+  }
 
-  # parameter {
-  #   name  = "log_output"
-  #   value = "FILE"
-  # }
+  parameter {
+    name  = "log_output"
+    value = "FILE"
+  }
 }

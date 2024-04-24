@@ -15,3 +15,7 @@ data "aws_iam_policy_document" "this" {
     ]
   }
 }
+
+data "aws_availability_zones" "this" {
+  state = "available"
+}

@@ -1,5 +1,10 @@
 output "resource_prefix" {
   value = {
+    glacier           = "${local.suffix}_${var.resource_type}_glacier_${local.compliance_status}"
+    event_bus         = "${local.suffix}_${var.resource_type}_event_bus_${local.compliance_status}"
+    firehose          = "${local.suffix}_${var.resource_type}_firehose_${local.compliance_status}" 
+    efs               = "${local.suffix}_${var.resource_type}_efs_${local.compliance_status}"
+    dlm_policy        = "${local.suffix}_${var.resource_type}_dlm_policy_${local.compliance_status}"
     beanstalk         = "${local.suffix}_${var.resource_type}_beanstalk_${local.compliance_status}"
     beanstalk_env     = "${local.suffix}-beanstalk-env-${local.compliance_status}"
     elasticache       = "${local.suffix}-${var.resource_type}-elasticache-${local.compliance_status}"
@@ -33,6 +38,7 @@ output "resource_prefix" {
     rds_cluster      = "${local.suffix}-${var.resource_type}-cluster-${local.compliance_status}"
     rds_param_grp     = "${local.suffix}-${var.resource_type}-paramgroup-${local.compliance_status}"
     rds_option_grp     = "${local.suffix}-${var.resource_type}-optgroup-${local.compliance_status}"
+    dax               = "${local.suffix}-${var.resource_type}-dax-${local.compliance_status}"
   }
 }
 

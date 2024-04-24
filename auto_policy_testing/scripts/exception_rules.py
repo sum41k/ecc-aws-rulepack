@@ -2,7 +2,7 @@ aws = {
     "green": [
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
         "ecc-aws-207-rds_aurora_logging_enabled",
-        "ecc-aws-200-rds_cluster_deletion_protection_enabled"
+        "ecc-aws-200-rds_cluster_deletion_protection_enabled",
         "ecc-aws-201-rds_instance_deletion_protection_enabled",
         "ecc-aws-594-underutilized_rds_instance_storage",
         "ecc-aws-614-idle_rds_instance",

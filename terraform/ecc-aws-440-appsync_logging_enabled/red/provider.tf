@@ -13,7 +13,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      CustodiaRule     = "ecc-aws-646-appsync_logging_enabled"
+      CustodianRule     = "ecc-aws-440-appsync_logging_enabled"
       ComplianceStatus = "Red"
     }
   }

@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    glue_job          = "${local.suffix}_${var.resource_type}_glue_job_${local.compliance_status}"
     hostedzone        = "${local.suffix}_${var.resource_type}_hostedzone_${local.compliance_status}"
     graphql_api       = "${local.suffix}_${var.resource_type}_graphql_api_${local.compliance_status}"
     glacier           = "${local.suffix}_${var.resource_type}_glacier_${local.compliance_status}"

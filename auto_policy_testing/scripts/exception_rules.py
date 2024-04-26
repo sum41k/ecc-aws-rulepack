@@ -24,7 +24,8 @@ aws = {
         "ecc-aws-571-stopped_rds_instances_removed",
         "ecc-aws-591-reserved_rds_instance_payment_failed",
         "ecc-aws-592-reserved_rds_instance_payment_pending",
-        "ecc-aws-593-reserved_rds_instance_recent_purchases"
+        "ecc-aws-593-reserved_rds_instance_recent_purchases",
+        "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys"
     ]
 }
 

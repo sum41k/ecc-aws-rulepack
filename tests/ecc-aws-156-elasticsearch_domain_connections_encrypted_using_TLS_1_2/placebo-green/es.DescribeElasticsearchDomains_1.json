@@ -4,12 +4,12 @@
         "ResponseMetadata": {},
         "DomainStatusList": [
             {
-                "DomainId": "this/domain-156-green",
+                "DomainId": "111111111111/domain-156-green",
                 "DomainName": "domain-156-green",
-                "ARN": "arn:aws:es:us-east-1:this:domain/domain-156-green",
+                "ARN": "arn:aws:es:us-east-1:111111111111:domain/domain-156-green",
                 "Created": true,
                 "Deleted": false,
-                "Endpoint": "search-domain-156-green-r6nnyosur2emlgzodasqgqzclm.us-east-1.es.amazonaws.com",
+                "Endpoint": "search-domain-156-green-2dldu26wxbilejec3a.us-east-1.es.amazonaws.com",
                 "Processing": false,
                 "UpgradeProcessing": false,
                 "ElasticsearchVersion": "7.10",
@@ -18,12 +18,17 @@
                     "InstanceCount": 1,
                     "DedicatedMasterEnabled": false,
                     "ZoneAwarenessEnabled": false,
-                    "WarmEnabled": false
+                    "WarmEnabled": false,
+                    "ColdStorageOptions": {
+                        "Enabled": false
+                    }
                 },
                 "EBSOptions": {
                     "EBSEnabled": true,
-                    "VolumeType": "gp2",
-                    "VolumeSize": 10
+                    "VolumeType": "gp3",
+                    "VolumeSize": 10,
+                    "Iops": 3000,
+                    "Throughput": 125
                 },
                 "AccessPolicies": "",
                 "SnapshotOptions": {
@@ -43,7 +48,7 @@
                     "rest.action.multi.allow_explicit_index": "true"
                 },
                 "ServiceSoftwareOptions": {
-                    "CurrentVersion": "R20210816",
+                    "CurrentVersion": "Elasticsearch_7_10_R20230928-P4",
                     "NewVersion": "",
                     "UpdateAvailable": false,
                     "Cancellable": false,
@@ -51,25 +56,56 @@
                     "Description": "There is no software update available for this domain.",
                     "AutomatedUpdateDate": {
                         "__class__": "datetime",
-                        "year": 2021,
-                        "month": 7,
-                        "day": 8,
-                        "hour": 8,
-                        "minute": 6,
-                        "second": 15,
+                        "year": 1970,
+                        "month": 1,
+                        "day": 1,
+                        "hour": 2,
+                        "minute": 0,
+                        "second": 0,
                         "microsecond": 0
                     },
-                    "OptionalDeployment": false
+                    "OptionalDeployment": true
                 },
                 "DomainEndpointOptions": {
                     "EnforceHTTPS": true,
-                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
+                    "TLSSecurityPolicy": "Policy-Min-TLS-1-2-PFS-2023-10",
                     "CustomEndpointEnabled": false
                 },
                 "AdvancedSecurityOptions": {
                     "Enabled": false,
-                    "InternalUserDatabaseEnabled": false
-                }
+                    "InternalUserDatabaseEnabled": false,
+                    "AnonymousAuthEnabled": false
+                },
+                "AutoTuneOptions": {
+                    "State": "DISABLED"
+                },
+                "ChangeProgressDetails": {
+                    "ChangeId": "acb67856-d78f-4a6e-bb8f-705fc1e38507",
+                    "ConfigChangeStatus": "Completed",
+                    "StartTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 4,
+                        "day": 26,
+                        "hour": 17,
+                        "minute": 36,
+                        "second": 25,
+                        "microsecond": 145000
+                    },
+                    "LastUpdatedTime": {
+                        "__class__": "datetime",
+                        "year": 2024,
+                        "month": 4,
+                        "day": 26,
+                        "hour": 17,
+                        "minute": 53,
+                        "second": 43,
+                        "microsecond": 521000
+                    },
+                    "InitiatedBy": "CUSTOMER"
+                },
+                "DomainProcessingStatus": "Active",
+                "ModifyingProperties": []
             }
         ]
     }

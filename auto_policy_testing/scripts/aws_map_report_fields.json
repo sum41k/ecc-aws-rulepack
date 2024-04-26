@@ -50,7 +50,7 @@
   "glue-catalog": ["CatalogId"],
   "glue-job": ["Name"],
   "glue-security-configuration": ["Name"],
-  "hostedzone": ["Id"],
+  "hostedzone": ["c7n:ConfigHostedZoneId"],
   "iam-certificate": ["Arn"],
   "iam-group": ["Arn"],
   "iam-policy-all": ["Arn"],

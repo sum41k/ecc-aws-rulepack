@@ -12,6 +12,7 @@
 				"iam:ListVirtualMFADevices",
 				"kafka:ListClustersV2",
 				"lambda:GetFunctionConfiguration",
+				"wafv2:ListWebACLs",
 				"workspaces:DescribeWorkspaceImages",
 				"workspaces:DescribeWorkspaces",
 				"workspaces:DescribeWorkspacesConnectionStatus",

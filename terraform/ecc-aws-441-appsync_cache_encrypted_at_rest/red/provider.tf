@@ -13,7 +13,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      CustodiaRule     = "ecc-aws-649-appsync_cache_encrypted_at_rest"
+      CustodianRule     = "ecc-aws-441-appsync_cache_encrypted_at_rest"
       ComplianceStatus = "Red"
     }
   }

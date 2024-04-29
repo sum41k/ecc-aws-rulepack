@@ -2,6 +2,15 @@
     "status_code": 200,
     "data": {
         "ResponseMetadata": {},
-        "TagList": []
+        "TagList": [
+            {
+                "Key": "CustodianRule",
+                "Value": "ecc-aws-156-elasticsearch_domain_connections_encrypted_using_TLS_1_2"
+            },
+            {
+                "Key": "ComplianceStatus",
+                "Value": "Green"
+            }
+        ]
     }
 }

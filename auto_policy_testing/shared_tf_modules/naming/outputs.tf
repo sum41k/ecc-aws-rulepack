@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    elasticsearch     = "${local.suffix}-elasticsearch-${local.compliance_status}"
     glue_security_configuration = "${local.suffix}_${var.resource_type}_glue_security_configuration_${local.compliance_status}"
     glue_job          = "${local.suffix}_${var.resource_type}_glue_job_${local.compliance_status}"
     hostedzone        = "${local.suffix}_${var.resource_type}_hostedzone_${local.compliance_status}"

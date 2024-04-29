@@ -83,7 +83,7 @@
   "rest-resource": ["id"],
   "rest-stage": ["stageName"],
   "route-table": ["RouteTableId"],
-  "rrset": ["SetIdentifier"],
+  "rrset": ["Name", "Type", "c7n:parent-id"],
   "s3": ["Name"],
   "s3-light": ["Name"],
   "sagemaker-endpoint-config": ["EndpointConfigArn"],

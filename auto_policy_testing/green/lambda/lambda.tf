@@ -58,6 +58,9 @@ resource "aws_lambda_function" "this" {
   # Layer version arn:aws:lambda:us-east-1:513731479296:layer:LambdaInsightsExtension:21 does not exist.
   # layers                         = ["arn:aws:lambda:${var.region}:${data.aws_caller_identity.this.account_id}:layer:LambdaInsightsExtension:21"]
 
+  # OR 
+  # layers                         = ["data.aws_lambda_layer_version.LambdaInsightsExtension.arn"]
+
   vpc_config {
     security_group_ids = [aws_security_group.this.id]
     subnet_ids         = [

@@ -43,6 +43,7 @@ output "resource_prefix" {
     trail             = "${local.suffix}_${var.resource_type}_trail_${local.compliance_status}"
     s3_bucket         = "${local.suffix}-${var.resource_type}-bucket-${local.compliance_status}"
     vpn_gtw           = "${local.suffix}-${var.resource_type}-vpn_gtw-${local.compliance_status}"
+    internet_gtw      = "${local.suffix}-${var.resource_type}-internet_gtw-${local.compliance_status}"
     rds_instance      = "${local.suffix}-${var.resource_type}-instance-${local.compliance_status}"
     rds_cluster       = "${local.suffix}-${var.resource_type}-cluster-${local.compliance_status}"
     rds_param_grp     = "${local.suffix}-${var.resource_type}-paramgroup-${local.compliance_status}"

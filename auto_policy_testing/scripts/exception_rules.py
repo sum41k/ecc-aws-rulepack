@@ -27,6 +27,7 @@ aws = {
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",
         "ecc-aws-344-route53_domain_expires_in_30_days",
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
+        "ecc-aws-536-lambda_function_settings_check",
         "ecc-aws-547-rds_instance_generation",
         "ecc-aws-552-dynamodb_tables_unused",
         "ecc-aws-571-stopped_rds_instances_removed",

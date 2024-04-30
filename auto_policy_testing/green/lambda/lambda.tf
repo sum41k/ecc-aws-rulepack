@@ -3,63 +3,23 @@ resource "aws_security_group" "this" {
   vpc_id = data.terraform_remote_state.common.outputs.vpc_id
 }
 
-resource "aws_iam_role" "this" {
-  name = "${module.naming.resource_prefix.lambda_function}"
+resource "aws_kms_ciphertext" "this" {
+  key_id = data.terraform_remote_state.common.outputs.kms_key_arn
 
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "lambda.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
-}
-EOF
+  plaintext = "bar"
 }
 
-resource "aws_iam_role_policy" "this" {
-  name = "${module.naming.resource_prefix.lambda_function}"
-  role = aws_iam_role.this.id
-
-  policy = <<-EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:CreateNetworkInterface",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DescribeInstances",
-                "ec2:AttachNetworkInterface"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
-  EOF
-}
+# Due to AWS Lambda improved VPC networking changes that began deploying in September 2019, EC2 subnets and security groups associated with Lambda Functions can take up to 45 minutes to successfully delete.
 
 resource "aws_lambda_function" "this" {
   filename                       = "func.zip"
   function_name                  = "${module.naming.resource_prefix.lambda_function}"
   role                           = aws_iam_role.this.arn
-  handler                        = "func.py"
+  handler                        = "func.lambda_handler"
   kms_key_arn                    = data.terraform_remote_state.common.outputs.kms_key_arn
   runtime                        = "python3.12"
   reserved_concurrent_executions = 1 
-  # Layer version arn:aws:lambda:us-east-1:513731479296:layer:LambdaInsightsExtension:21 does not exist.
-  # layers                         = ["arn:aws:lambda:${var.region}:${data.aws_caller_identity.this.account_id}:layer:LambdaInsightsExtension:21"]
-
-  # OR 
-  # layers                         = ["data.aws_lambda_layer_version.LambdaInsightsExtension.arn"]
+  layers                         = ["arn:aws:lambda:${var.region}:580247275435:layer:LambdaInsightsExtension:52"]
 
   vpc_config {
     security_group_ids = [aws_security_group.this.id]
@@ -75,7 +35,7 @@ resource "aws_lambda_function" "this" {
 
   environment {
     variables = {
-      foo = "bar"
+      foo = aws_kms_ciphertext.this.ciphertext_blob
     }
   }
 }

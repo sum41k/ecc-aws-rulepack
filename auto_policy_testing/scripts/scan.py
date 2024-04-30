@@ -3,6 +3,7 @@ import pathlib
 import os
 import subprocess
 import sys
+import time
 import timer
 import exception_rules
 from terraform_infra import output
@@ -52,7 +53,8 @@ def custodian_run(policy_execution_outputs: dict,
         print('Please use --regions param or setup the AWS_DEFAULT_REGION environment variable')
         sys.exit(1)
     regions = REGIONS.split(';')
-
+    if resource == 'account':
+        time.sleep(180)
     for region in regions:
         region_param = '--region=' + region if region != "default" else ""
         for policy in policies:
@@ -62,6 +64,7 @@ def custodian_run(policy_execution_outputs: dict,
                 if policy_resource.startswith(f'aws.{resource}') or policy_resource.startswith(resource):
                     if policy_in_exception(policy.split('.')[0], cloud, color):
                         continue
+
                     command = (f"custodian run {os.path.join(POLICY_DIR, policy)} --dry-run --output-dir={os.path.join(OUTPUT_DIR, region)} \
                                --cache-period=0 {region_param if region_param else ''} \
                                {f'--assume {sa}'  if sa and CLOUD in ['GCP','AWS'] else ''}")

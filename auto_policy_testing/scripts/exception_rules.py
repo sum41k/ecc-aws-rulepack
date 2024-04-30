@@ -1,5 +1,7 @@
 aws = {
     "green": [
+        "ecc-aws-015-ensure_mfa_is_enabled_for_the_root_account",
+        "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-200-rds_cluster_deletion_protection_enabled",
         "ecc-aws-201-rds_instance_deletion_protection_enabled",
         "ecc-aws-207-rds_aurora_logging_enabled",
@@ -15,7 +17,12 @@ aws = {
     ],
     "red": [
         "ecc-aws-022-ebs_volumes_too_old_snapshots",
+        "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",
+        "ecc-aws-046-ensure_no_root_account_access_key_exists",
+        "ecc-aws-059-config_enabled_all_regions",
         "ecc-aws-128-expired_route53_domain_names",
+        "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
+        "ecc-aws-145-organizations_changes_alarm_exists",
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",
         "ecc-aws-344-route53_domain_expires_in_30_days",
@@ -33,7 +40,8 @@ aws = {
         "ecc-aws-614-idle_rds_instance"
     ],
     "parallel": [
-        "glue"
+        "glue",
+        "account"
     ]
 }
 

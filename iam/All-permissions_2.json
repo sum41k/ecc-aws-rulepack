@@ -9,6 +9,8 @@
 				"cloudwatch:DescribeAlarmsForMetric",
 				"events:ListRules",
 				"events:ListTargetsByRule",
+				"guardduty:GetDetector",
+				"guardduty:GetMasterAccount",
 				"iam:ListVirtualMFADevices",
 				"kafka:ListClustersV2",
 				"lambda:GetFunctionConfiguration",

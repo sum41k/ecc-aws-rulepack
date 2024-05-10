@@ -20,6 +20,7 @@ aws = {
         "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",
         "ecc-aws-046-ensure_no_root_account_access_key_exists",
         "ecc-aws-059-config_enabled_all_regions",
+        "ecc-aws-115-expired_certificates_are_removed_from_acm",
         "ecc-aws-128-expired_route53_domain_names",
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
         "ecc-aws-145-organizations_changes_alarm_exists",

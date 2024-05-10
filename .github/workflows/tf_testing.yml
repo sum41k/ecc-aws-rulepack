@@ -22,47 +22,47 @@ env:
   CORE_TESTING_FOLDER: ${{ github.workspace }}
   OUTPUT_DIR: ${{ github.workspace }}/auto_policy_testing/output
   AWS_DEFAULT_REGION: ${{ vars.AWS_REGION }}
-  resource_priority_list: 'account'
+  resource_priority_list: 'acm'
   RED: '\033[0;31m'
 
 jobs:
-  # terraform_test_policy_green_flights:
-  #   permissions:
-  #     contents: 'read'
-  #     id-token: 'write'
-  #   runs-on: ubuntu-22.04
-  #   steps:
-  #     - name: Git clone the repository
-  #       uses: actions/checkout@v4
-  #     - name: configure aws credentials
-  #       uses: aws-actions/configure-aws-credentials@v4
-  #       with:
-  #         role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
-  #         role-session-name: ECC-AWS-RULEPACK_CI-GREEN
-  #         aws-region: ${{ vars.AWS_REGION }}
-  #     - name: Install dependencies
-  #       shell: bash
-  #       working-directory: auto_policy_testing/scripts
-  #       run: |
-  #         pip install -r requirements.txt
-  #     - name: terraform_test_policy_green_flights
-  #       shell: bash
-  #       working-directory: auto_policy_testing/scripts
-  #       run: |
-  #         python main.py \
-  #           --cloud AWS \
-  #           --infra_color green \
-  #           -l $resource_priority_list \
-  #           --base_dir $GITHUB_WORKSPACE \
-  #           --output_dir $OUTPUT_DIR \
-  #           --sa "github_ci_readonly_ecc-aws-rulepack"
-  #         echo -e "${RED}Failed policies:"
-  #         cat $OUTPUT_DIR/.failed
-  #         echo -e "${RED}Failed terraforms:"
-  #         cat $OUTPUT_DIR/.tf_failed
-  #         test -s $OUTPUT_DIR/.failed && exit 1
-  #         test -s $OUTPUT_DIR/.tf_failed && exit 1
-  #         exit 0
+  terraform_test_policy_green_flights:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.CI_ASSUME_ROLE }}
+          role-session-name: ECC-AWS-RULEPACK_CI-GREEN
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Install dependencies
+        shell: bash
+        working-directory: auto_policy_testing/scripts
+        run: |
+          pip install -r requirements.txt
+      - name: terraform_test_policy_green_flights
+        shell: bash
+        working-directory: auto_policy_testing/scripts
+        run: |
+          python main.py \
+            --cloud AWS \
+            --infra_color green \
+            -l $resource_priority_list \
+            --base_dir $GITHUB_WORKSPACE \
+            --output_dir $OUTPUT_DIR \
+            --sa "github_ci_readonly_ecc-aws-rulepack"
+          echo -e "${RED}Failed policies:"
+          cat $OUTPUT_DIR/.failed
+          echo -e "${RED}Failed terraforms:"
+          cat $OUTPUT_DIR/.tf_failed
+          test -s $OUTPUT_DIR/.failed && exit 1
+          test -s $OUTPUT_DIR/.tf_failed && exit 1
+          exit 0
 
   terraform_test_policy_red_flights:
     permissions:

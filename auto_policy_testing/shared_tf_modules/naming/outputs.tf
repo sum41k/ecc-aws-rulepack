@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    acm               = "${local.suffix}.${local.compliance_status}"
     elasticsearch     = "${local.suffix}-elasticsearch-${local.compliance_status}"
     glue_security_configuration = "${local.suffix}_${var.resource_type}_glue_security_configuration_${local.compliance_status}"
     glue_job          = "${local.suffix}_${var.resource_type}_glue_job_${local.compliance_status}"
@@ -10,6 +11,7 @@ output "resource_prefix" {
     event_bus         = "${local.suffix}_${var.resource_type}_event_bus_${local.compliance_status}"
     firehose          = "${local.suffix}_${var.resource_type}_firehose_${local.compliance_status}" 
     efs               = "${local.suffix}_${var.resource_type}_efs_${local.compliance_status}"
+    lb                = "${local.suffix}-${var.resource_type}-lb-${local.compliance_status}"
     dlm_policy        = "${local.suffix}_${var.resource_type}_dlm_policy_${local.compliance_status}"
     beanstalk         = "${local.suffix}_${var.resource_type}_beanstalk_${local.compliance_status}"
     beanstalk_env     = "${local.suffix}-beanstalk-env-${local.compliance_status}"

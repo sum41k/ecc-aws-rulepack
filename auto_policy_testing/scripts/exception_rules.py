@@ -5,6 +5,8 @@ aws = {
         "ecc-aws-200-rds_cluster_deletion_protection_enabled",
         "ecc-aws-201-rds_instance_deletion_protection_enabled",
         "ecc-aws-207-rds_aurora_logging_enabled",
+        "ecc-aws-286-workspaces_unused_instances",
+        "ecc-aws-331-workspaces_images_not_older_than_90_days", 
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
         "ecc-aws-587-elasticsearch_reserved_instance_payment_failed",
         "ecc-aws-588-elasticsearch_reserved_instance_payment_pending",
@@ -26,6 +28,8 @@ aws = {
         "ecc-aws-145-organizations_changes_alarm_exists",
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",
+        "ecc-aws-288-workspaces_instances_are_healthy",
+        "ecc-aws-331-workspaces_images_not_older_than_90_days", 
         "ecc-aws-344-route53_domain_expires_in_30_days",
         "ecc-aws-519-vpc_vpn_2_tunnels_up",
         "ecc-aws-536-lambda_function_settings_check",
@@ -43,7 +47,8 @@ aws = {
     ],
     "parallel": [
         "glue",
-        "account"
+        "account",
+        "workspaces"
     ]
 }
 

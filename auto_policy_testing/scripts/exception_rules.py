@@ -18,6 +18,8 @@ aws = {
         "ecc-aws-614-idle_rds_instance"
     ],
     "red": [
+        "ecc-aws-002-ensure_access_keys_are_rotated_every_90_days",
+        "ecc-aws-017-credentials_unused_for_45_days",
         "ecc-aws-022-ebs_volumes_too_old_snapshots",
         "ecc-aws-016-ensure_hardware_mfa_is_enabled_for_root_account",
         "ecc-aws-046-ensure_no_root_account_access_key_exists",
@@ -25,6 +27,7 @@ aws = {
         "ecc-aws-115-expired_certificates_are_removed_from_acm",
         "ecc-aws-128-expired_route53_domain_names",
         "ecc-aws-138-eliminate_use_root_user_for_administrative_and_daily_tasks",
+        "ecc-aws-141-expired_ssl_tls_certificates_stored_in_aws_iam_are_removed",
         "ecc-aws-145-organizations_changes_alarm_exists",
         "ecc-aws-207-rds_aurora_logging_enabled",
         "ecc-aws-253-glue_data_catalog_encrypted_with_kms_customer_master_keys",

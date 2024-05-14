@@ -1,5 +1,6 @@
 output "resource_prefix" {
   value = {
+    message_broker    = "${local.suffix}_${var.resource_type}_mq_${local.compliance_status}"
     elasticsearch     = "${local.suffix}-elasticsearch-${local.compliance_status}"
     glue_security_configuration = "${local.suffix}_${var.resource_type}_glue_security_configuration_${local.compliance_status}"
     glue_job          = "${local.suffix}_${var.resource_type}_glue_job_${local.compliance_status}"
@@ -39,7 +40,6 @@ output "resource_prefix" {
     cw_log_group      = "${local.suffix}_${var.resource_type}_lg_${local.compliance_status}"
     s3_bucket         = "${local.suffix}-${var.resource_type}-bucket-${local.compliance_status}"
     vpn_gtw           = "${local.suffix}-${var.resource_type}-vpn_gtw-${local.compliance_status}"
-
   }
 }
 

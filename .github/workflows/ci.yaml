@@ -8,7 +8,7 @@ jobs:
   test_policy_red_flights:
     if: github.event_name == 'push' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
     runs-on: ubuntu-22.04
-    container: python:3.8
+    container: python:3.9
     steps: 
       - uses: actions/checkout@v4
       - uses: ./.github/workflows/composite-action
@@ -16,7 +16,7 @@ jobs:
         shell: bash
         run: |
           cd cloud-custodian
-          python3.8 -m venv .venv && source .venv/bin/activate
+          python3 -m venv .venv && source .venv/bin/activate
           pip install poetry
           make install
           mkdir out
@@ -58,7 +58,7 @@ jobs:
         shell: bash
         run: |
           cd cloud-custodian
-          python3.8 -m venv .venv && source .venv/bin/activate
+          python3 -m venv .venv && source .venv/bin/activate
           pip install poetry
           make install
           mkdir out

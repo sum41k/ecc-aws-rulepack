@@ -4,7 +4,7 @@
         "ResponseMetadata": {},
         "AuthenticationStrategy": "simple",
         "AutoMinorVersionUpgrade": false,
-        "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
+        "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
         "BrokerId": "b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
         "BrokerInstances": [
             {
@@ -53,7 +53,7 @@
         "SecurityGroups": [],
         "StorageType": "ebs",
         "SubnetIds": [
-            "subnet-8158d8de"
+            "subnet-thtgs827"
         ],
         "Tags": {
             "CustodianRule": "ecc-aws-434-mq_broker_latest_version",

@@ -4,7 +4,7 @@
         "ResponseMetadata": {},
         "BrokerSummaries": [
             {
-                "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-active-434-green:b-200c9daf-2b9a-4069-9082-dcfa081345aa",
+                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-active-434-green:b-200c9daf-2b9a-4069-9082-dcfa081345aa",
                 "BrokerId": "b-200c9daf-2b9a-4069-9082-dcfa081345aa",
                 "BrokerName": "mq-broker-active-434-green",
                 "BrokerState": "RUNNING",
@@ -23,7 +23,7 @@
                 "HostInstanceType": "mq.t2.micro"
             },
             {
-                "BrokerArn": "arn:aws:mq:us-east-1:644160558196:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
+                "BrokerArn": "arn:aws:mq:us-east-1:111111111111:broker:mq-broker-rabbit-434-green:b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
                 "BrokerId": "b-86170a63-a56e-4e1e-9001-8cb46c4fe33f",
                 "BrokerName": "mq-broker-rabbit-434-green",
                 "BrokerState": "RUNNING",
